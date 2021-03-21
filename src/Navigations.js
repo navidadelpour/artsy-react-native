@@ -2,7 +2,8 @@ import React, {Fragment} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import ArtistsScreen from './screens/ArtistsScreen';
-import ArtistDetailScreen, {BiographyDetail} from './screens/ArtistDetailScreen';
+import ArtistDetailScreen from './screens/ArtistDetailScreen';
+import BiographyDetail from './screens/ArtistDetailScreen/BiographyDetail';
 
 const Stack = createStackNavigator();
 
