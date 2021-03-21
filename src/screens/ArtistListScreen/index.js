@@ -1,12 +1,12 @@
 import React from 'react';
 import {SafeAreaView, StatusBar, ScrollView} from 'react-native';
-import ArtistsList from '../components/ArtistsList';
+import ArtistsList from './ArtistsList';
 
-import {POPULAR_ARTISTS, TRENDING_ARTISTS} from '../graphql/artists';
-import popularArtistsMock from '../mocks/popularArtistsMock';
-import trendingArtistsMock from '../mocks/trendingArtistsMock';
+import {POPULAR_ARTISTS, TRENDING_ARTISTS} from '../../graphql/artists';
+import popularArtistsMock from '../../mocks/popularArtistsMock';
+import trendingArtistsMock from '../../mocks/trendingArtistsMock';
 
-export default function ArtistsScreen() {
+export default function ArtistListScreen() {
   return (
     <SafeAreaView>
       <StatusBar barStyle="light-content" backgroundColor="black" />

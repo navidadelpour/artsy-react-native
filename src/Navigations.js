@@ -1,7 +1,7 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import ArtistsScreen from './screens/ArtistsScreen';
+import ArtistListScreen from './screens/ArtistListScreen';
 import ArtistDetailScreen from './screens/ArtistDetailScreen';
 import BiographyDetail from './screens/ArtistDetailScreen/BiographyDetail';
 
@@ -11,7 +11,7 @@ export default function Navigations() {
   return (
     <>
       <Stack.Navigator initialRouteName="Artists">
-        <Stack.Screen name="Artists" component={ArtistsScreen} />
+        <Stack.Screen name="Artists" component={ArtistListScreen} />
         <Stack.Screen name="Artist" component={ArtistDetailScreen} />
         <Stack.Screen
           name="BiographyDetail"
