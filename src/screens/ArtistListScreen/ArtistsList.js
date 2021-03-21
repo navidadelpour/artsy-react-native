@@ -36,10 +36,6 @@ const styles = StyleSheet.create({
   },
 });
 
-function keyExtractor(item) {
-  return item.id;
-}
-
 function ArtistCard({item, index}) {
   const isFirstItem = index === 0;
   const navigation = useNavigation();
@@ -90,7 +86,6 @@ export default function ArtistsList({query, mock, dataKey, subheading}) {
           horizontal
           style={styles.list}
           data={artists}
-          keyExtractor={keyExtractor}
           renderItem={props => <ArtistCard {...props} />}
         />
       )}

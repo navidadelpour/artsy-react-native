@@ -9,6 +9,7 @@ import {ARTIST} from '../../graphql/artists';
 import artistMock from '../../mocks/artistMock';
 import ArtistBiography from './ArtistBiography';
 import ArtistHeader from './ArtistHeader';
+import ArtistArtworks from './ArtistArtworks';
 
 const ArtistTab = createMaterialTopTabNavigator();
 
@@ -34,10 +35,14 @@ export default function ArtistDetailScreen({mock = artistMock}) {
     );
   }
 
-  const {name, nationality, birthday, location, biography} = data && data.artist;
+  const {name, nationality, birthday, location, biography, artworks} = data && data.artist;
 
   function _ArtistBiography(props) {
     return <ArtistBiography biography={biography} {...props} />;
+  }
+
+  function _ArtistArtworks(props) {
+    return <ArtistArtworks artworks={artworks} {...props} />;
   }
 
   return (
@@ -51,7 +56,7 @@ export default function ArtistDetailScreen({mock = artistMock}) {
           },
         }}>
         <ArtistTab.Screen name="Biography" component={_ArtistBiography} />
-        <ArtistTab.Screen name="Works" component={_ArtistBiography} />
+        <ArtistTab.Screen name="Works" component={_ArtistArtworks} />
       </ArtistTab.Navigator>
     </>
   );

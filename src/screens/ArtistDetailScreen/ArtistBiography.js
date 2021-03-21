@@ -4,7 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 import Moment from 'react-moment';
 
 import {Button, Caption, Card, Colors, Paragraph, Subheading, Title} from 'react-native-paper';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import BasicIconMessage from '../../components/BasicIconMessage';
 
 const styles = StyleSheet.create({
   card: {
@@ -26,18 +26,11 @@ const styles = StyleSheet.create({
     marginTop: 16,
     backgroundColor: Colors.black,
   },
-  emptyWrapper: {justifyContent: 'center', alignItems: 'center', flexGrow: 1},
-  emptyMessage: {fontStyle: 'italic'},
 });
 
 export default function ArtistBiography({biography}) {
   if (!biography) {
-    return (
-      <View style={styles.emptyWrapper}>
-        <Icon name="error-outline" size={100} color={Colors.grey400} />
-        <Caption style={styles.emptyMessage}>No biography available</Caption>
-      </View>
-    );
+    return <BasicIconMessage message="No biography available" icon="error-outline" />;
   }
   const {
     author,
