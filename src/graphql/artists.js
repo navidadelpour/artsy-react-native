@@ -31,3 +31,42 @@ export const TRENDING_ARTISTS = gql`
     }
   }
 `;
+
+export const ARTIST = gql`
+  query Artist($id: String!) {
+    artist(id: $id) {
+      id
+      name
+      nationality
+      birthday
+      gender
+      hometown
+      location
+      image {
+        url
+      }
+      biography {
+        id
+        author {
+          name
+        }
+        href
+        thumbnail_title
+        thumbnail_teaser
+        published_at
+        thumbnail_image {
+          url
+        }
+      }
+      artworks {
+        title
+        category
+        is_sold
+        price
+        image {
+          url
+        }
+      }
+    }
+  }
+`;
