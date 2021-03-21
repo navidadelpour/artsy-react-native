@@ -6,7 +6,7 @@ import {POPULAR_ARTISTS, TRENDING_ARTISTS} from '../graphql/artists';
 import popularArtistsMock from '../mocks/popularArtistsMock';
 import trendingArtistsMock from '../mocks/trendingArtistsMock';
 
-export default function HomeScreen() {
+export default function ArtistsScreen() {
   return (
     <SafeAreaView>
       <StatusBar barStyle="light-content" backgroundColor="black" />
