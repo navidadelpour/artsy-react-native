@@ -6,14 +6,14 @@ import {Provider as PaperProvider} from 'react-native-paper';
 import {ApolloProvider} from '@apollo/client';
 
 import client from './src/apollo/client';
-import HomeScreen from './src/screens/HomeScreen';
+import Navigations from './src/Navigations';
 
 export default function App() {
   return (
     <NavigationContainer>
       <ApolloProvider client={client}>
         <PaperProvider>
-          <HomeScreen />
+          <Navigations />
         </PaperProvider>
       </ApolloProvider>
     </NavigationContainer>

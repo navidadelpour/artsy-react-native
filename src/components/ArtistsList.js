@@ -2,6 +2,7 @@ import React from 'react';
 import {useQuery} from '@apollo/client';
 import {FlatList, StyleSheet, View} from 'react-native';
 import {Card, Paragraph, Subheading, Title, ActivityIndicator} from 'react-native-paper';
+import {useNavigation} from '@react-navigation/native';
 
 const artistsListStyles = StyleSheet.create({
   wrapper: {
@@ -31,14 +32,20 @@ function keyExtractor(item) {
 }
 
 function ArtistCard({item}) {
-  const {image, name, nationality, birthday} = item;
+  const navigation = useNavigation();
+  const {id, image, name, nationality, birthday} = item;
+
+  function onPress() {
+    navigation.navigate('Artist', {id});
+  }
+
   return (
-    <Card style={artistsListStyles.card}>
+    <Card style={artistsListStyles.card} onPress={onPress}>
       <Card.Cover source={{uri: image.url}} />
       <Card.Content style={artistsListStyles.cardContent}>
         <Title>{name}</Title>
         <Paragraph>
-          {nationality} - b {birthday}
+          {nationality}, b {birthday}
         </Paragraph>
       </Card.Content>
     </Card>
@@ -70,7 +77,7 @@ export default function ArtistsList({query, mock, dataKey, subheading}) {
         style={artistsListStyles.list}
         data={artists}
         keyExtractor={keyExtractor}
-        renderItem={ArtistCard}
+        renderItem={props => <ArtistCard {...props} />}
       />
     </View>
   );
