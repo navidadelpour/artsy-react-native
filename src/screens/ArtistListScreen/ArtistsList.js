@@ -14,12 +14,15 @@ const styles = StyleSheet.create({
   },
   list: {
     marginTop: 8,
+    paddingBottom: 16,
   },
   card: {
     width: 200,
     padding: 8,
-    margin: 16,
-    marginTop: 0,
+    marginRight: 16,
+  },
+  firstCard: {
+    marginLeft: 16,
   },
   cardContent: {
     paddingHorizontal: 0,
@@ -37,7 +40,8 @@ function keyExtractor(item) {
   return item.id;
 }
 
-function ArtistCard({item}) {
+function ArtistCard({item, index}) {
+  const isFirstItem = index === 0;
   const navigation = useNavigation();
   const {id, image, name, nationality, birthday} = item;
 
@@ -46,7 +50,7 @@ function ArtistCard({item}) {
   }
 
   return (
-    <Card style={styles.card} onPress={onPress}>
+    <Card style={[styles.card, isFirstItem && styles.firstCard]} onPress={onPress}>
       <Card.Cover source={{uri: image.url}} />
       <Card.Content style={styles.cardContent}>
         <Subheading>{name}</Subheading>
