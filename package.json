@@ -11,8 +11,10 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
+    "@apollo/client": "^3.3.12",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/native": "^5.9.3",
+    "graphql": "^15.5.0",
     "react": "17.0.1",
     "react-native": "0.64.0",
     "react-native-gesture-handler": "^1.10.3",
