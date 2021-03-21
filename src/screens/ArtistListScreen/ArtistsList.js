@@ -14,12 +14,12 @@ const styles = StyleSheet.create({
   },
   list: {
     marginTop: 8,
-    paddingBottom: 16,
   },
   card: {
     width: 200,
     padding: 8,
     marginRight: 16,
+    marginBottom: 16,
   },
   firstCard: {
     marginLeft: 16,

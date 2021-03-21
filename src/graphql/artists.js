@@ -39,12 +39,7 @@ export const ARTIST = gql`
       name
       nationality
       birthday
-      gender
-      hometown
       location
-      image {
-        url
-      }
       biography {
         id
         author {
@@ -59,6 +54,7 @@ export const ARTIST = gql`
         }
       }
       artworks {
+        id
         title
         category
         is_sold
