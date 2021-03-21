@@ -1,10 +1,10 @@
 import React from 'react';
 import {useQuery} from '@apollo/client';
 import {FlatList, StyleSheet, View} from 'react-native';
-import {Card, Paragraph, Subheading, Title, ActivityIndicator} from 'react-native-paper';
+import {Card, Subheading, ActivityIndicator, Colors, Caption} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 
-const artistsListStyles = StyleSheet.create({
+const styles = StyleSheet.create({
   wrapper: {
     marginTop: 16,
     marginBottom: 32,
@@ -25,6 +25,12 @@ const artistsListStyles = StyleSheet.create({
     paddingHorizontal: 0,
     paddingBottom: 0,
   },
+  loader: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexGrow: 1,
+    height: 320,
+  },
 });
 
 function keyExtractor(item) {
@@ -40,13 +46,13 @@ function ArtistCard({item}) {
   }
 
   return (
-    <Card style={artistsListStyles.card} onPress={onPress}>
+    <Card style={styles.card} onPress={onPress}>
       <Card.Cover source={{uri: image.url}} />
-      <Card.Content style={artistsListStyles.cardContent}>
-        <Title>{name}</Title>
-        <Paragraph>
+      <Card.Content style={styles.cardContent}>
+        <Subheading>{name}</Subheading>
+        <Caption>
           {nationality}, b {birthday}
-        </Paragraph>
+        </Caption>
       </Card.Content>
     </Card>
   );
@@ -69,16 +75,21 @@ export default function ArtistsList({query, mock, dataKey, subheading}) {
     data[dataKey].artists;
 
   return (
-    <View style={artistsListStyles.wrapper}>
-      <Subheading style={artistsListStyles.subheading}>{subheading}</Subheading>
-      {loading && <ActivityIndicator />}
-      <FlatList
-        horizontal
-        style={artistsListStyles.list}
-        data={artists}
-        keyExtractor={keyExtractor}
-        renderItem={props => <ArtistCard {...props} />}
-      />
+    <View style={styles.wrapper}>
+      <Subheading style={styles.subheading}>{subheading}</Subheading>
+      {loading ? (
+        <View style={styles.loader}>
+          <ActivityIndicator color={Colors.black} />
+        </View>
+      ) : (
+        <FlatList
+          horizontal
+          style={styles.list}
+          data={artists}
+          keyExtractor={keyExtractor}
+          renderItem={props => <ArtistCard {...props} />}
+        />
+      )}
     </View>
   );
 }

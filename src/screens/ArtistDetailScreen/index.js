@@ -4,12 +4,17 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import {useQuery} from '@apollo/client';
 
 import {ActivityIndicator, Colors} from 'react-native-paper';
+import {StyleSheet, View} from 'react-native';
 import {ARTIST} from '../../graphql/artists';
 import artistMock from '../../mocks/artistMock';
 import ArtistBiography from './ArtistBiography';
 import ArtistHeader from './ArtistHeader';
 
 const ArtistTab = createMaterialTopTabNavigator();
+
+const styles = StyleSheet.create({
+  loader: {justifyContent: 'center', alignItems: 'center', flexGrow: 1},
+});
 
 export default function ArtistDetailScreen({mock = artistMock}) {
   const {params} = useRoute();
@@ -22,13 +27,17 @@ export default function ArtistDetailScreen({mock = artistMock}) {
     : useQuery(ARTIST, {variables: {id: params.id}});
 
   if (loading) {
-    return <ActivityIndicator />;
+    return (
+      <View style={styles.loader}>
+        <ActivityIndicator color={Colors.black} />
+      </View>
+    );
   }
 
   const {name, nationality, birthday, location, biography} = data && data.artist;
 
   function _ArtistBiography(props) {
-    return <ArtistBiography {...biography} {...props} />;
+    return <ArtistBiography biography={biography} {...props} />;
   }
 
   return (

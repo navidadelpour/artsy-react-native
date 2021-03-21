@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import {Caption, Colors, Paragraph, Title} from 'react-native-paper';
 
-const artistHeaderStyles = StyleSheet.create({
+const styles = StyleSheet.create({
   wrapper: {
     backgroundColor: Colors.white,
     display: 'flex',
@@ -15,7 +15,7 @@ const artistHeaderStyles = StyleSheet.create({
 
 export default function ArtistHeader({name, nationality, birthday, location}) {
   return (
-    <View style={artistHeaderStyles.wrapper}>
+    <View style={styles.wrapper}>
       <Title>{name}</Title>
       <Paragraph>
         {nationality}, b {birthday}
