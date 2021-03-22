@@ -3,6 +3,7 @@ import {FlatList, StyleSheet, View} from 'react-native';
 import {Card, ActivityIndicator, Colors, Caption, Subheading} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 import useMockedQuery from '../../hooks/useMockedQuery';
+import BasicIconMessage from '../../components/BasicIconMessage';
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -10,6 +11,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   subheading: {
+    textTransform: 'uppercase',
     marginLeft: 16,
   },
   list: {
@@ -58,8 +60,8 @@ function ArtistCard({item, index}) {
   );
 }
 
-export default function ArtistsList({query, dataKey, subheading}) {
-  const {data, loading} = useMockedQuery(query);
+export default function ArtistsList({query, variables, dataKey, subheading}) {
+  const {data, loading, error} = useMockedQuery(query, {variables});
   const artists =
     data &&
     data[dataKey] &&
@@ -70,6 +72,7 @@ export default function ArtistsList({query, dataKey, subheading}) {
   return (
     <View style={styles.wrapper}>
       <Caption style={styles.subheading}>{subheading}</Caption>
+      {error && <BasicIconMessage error icon="warning" message="Failed Fetching artists!" />}
       {loading ? (
         <View style={styles.loader}>
           <ActivityIndicator color={Colors.black} />

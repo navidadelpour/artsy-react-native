@@ -19,10 +19,12 @@ export default function ArtistHeader({name, nationality, birthday, location}) {
       <Paragraph>
         {nationality}, b {birthday}
       </Paragraph>
-      <Caption>
-        <Icon name="location-on" />
-        {location}
-      </Caption>
+      {location ? (
+        <Caption>
+          <Icon name="location-on" />
+          {location}
+        </Caption>
+      ) : null}
     </View>
   );
 }

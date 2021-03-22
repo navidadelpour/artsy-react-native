@@ -12,12 +12,25 @@ export default function ArtistListScreen() {
         <ArtistsList
           query={POPULAR_ARTISTS}
           dataKey="popular_artists"
-          subheading="POPULAR ARTISTS"
+          subheading="popular artists"
         />
         <ArtistsList
           query={TRENDING_ARTISTS}
+          variables={{name: 'ARTIST_FAIR'}}
           dataKey="trending_artists"
-          subheading="TRENDING ARTISTS"
+          subheading="with most artworks in fairs"
+        />
+        <ArtistsList
+          query={TRENDING_ARTISTS}
+          variables={{name: 'ARTIST_INQUIRY'}}
+          dataKey="trending_artists"
+          subheading="trending artists"
+        />
+        <ArtistsList
+          query={TRENDING_ARTISTS}
+          variables={{name: 'ARTIST_FOLLOW'}}
+          dataKey="trending_artists"
+          subheading="most followed"
         />
       </ScrollView>
     </SafeAreaView>

@@ -17,8 +17,8 @@ export const POPULAR_ARTISTS = gql`
 `;
 
 export const TRENDING_ARTISTS = gql`
-  query TrendingArtists {
-    trending_artists(name: ARTIST_INQUIRY) {
+  query TrendingArtists($name: TrendingMetrics!) {
+    trending_artists(name: $name) {
       artists {
         id
         name
