@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler';
 
-import React from 'react';
+import React, {useEffect} from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   NavigationContainer,
   DarkTheme as NavigationDarkTheme,
@@ -16,6 +17,8 @@ import {ApolloProvider, gql, useQuery} from '@apollo/client';
 import {View} from 'react-native';
 import client from './src/apollo/client';
 import Navigations from './src/Navigations';
+import {isDarkTheme} from './src/apollo/cache';
+import Loader from './src/components/Loader';
 
 const defaultTheme = {
   ...PaperDefaultTheme,
@@ -45,7 +48,23 @@ const IS_DARK_THEME = gql`
 
 function ThemeController({children}) {
   const {data} = useQuery(IS_DARK_THEME);
-  const theme = data && data.isDarkTheme ? darkTheme : defaultTheme;
+  const darkMode = data && data.isDarkTheme;
+  const theme = darkMode ? darkTheme : defaultTheme;
+
+  useEffect(() => {
+    AsyncStorage.getItem('isDarkTheme').then(value => {
+      const isDarkThemeStorage = value === 'true';
+      isDarkTheme(isDarkThemeStorage);
+    });
+  }, []);
+
+  useEffect(() => {
+    AsyncStorage.setItem('isDarkTheme', `${darkMode}`).catch(console.log);
+  }, [darkMode]);
+
+  if (darkMode === undefined) {
+    return <Loader />;
+  }
 
   return (
     <View

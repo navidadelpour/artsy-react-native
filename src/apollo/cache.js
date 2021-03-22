@@ -1,6 +1,6 @@
 import {InMemoryCache, makeVar} from '@apollo/client';
 
-export const isDarkTheme = makeVar(false);
+export const isDarkTheme = makeVar(undefined);
 
 const cache = new InMemoryCache({
   typePolicies: {
