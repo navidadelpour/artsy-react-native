@@ -1,13 +1,13 @@
 import React from 'react';
-import {useQuery} from '@apollo/client';
 import {FlatList, StyleSheet, View} from 'react-native';
-import {Card, Subheading, ActivityIndicator, Colors, Caption} from 'react-native-paper';
+import {Card, ActivityIndicator, Colors, Caption, Subheading} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
+import useMockedQuery from '../../hooks/useMockedQuery';
 
 const styles = StyleSheet.create({
   wrapper: {
     marginTop: 16,
-    marginBottom: 32,
+    marginBottom: 16,
   },
   subheading: {
     marginLeft: 16,
@@ -42,7 +42,7 @@ function ArtistCard({item, index}) {
   const {id, image, name, nationality, birthday} = item;
 
   function onPress() {
-    navigation.navigate('Artist', {id});
+    navigation.navigate('Artist', {id, artistName: name});
   }
 
   return (
@@ -58,15 +58,8 @@ function ArtistCard({item, index}) {
   );
 }
 
-export default function ArtistsList({query, mock, dataKey, subheading}) {
-  const {data, loading} = mock
-    ? {
-        ...mock,
-        loading: false,
-        error: false,
-      }
-    : useQuery(query);
-
+export default function ArtistsList({query, dataKey, subheading}) {
+  const {data, loading} = useMockedQuery(query);
   const artists =
     data &&
     data[dataKey] &&
@@ -76,7 +69,7 @@ export default function ArtistsList({query, mock, dataKey, subheading}) {
 
   return (
     <View style={styles.wrapper}>
-      <Subheading style={styles.subheading}>{subheading}</Subheading>
+      <Caption style={styles.subheading}>{subheading}</Caption>
       {loading ? (
         <View style={styles.loader}>
           <ActivityIndicator color={Colors.black} />

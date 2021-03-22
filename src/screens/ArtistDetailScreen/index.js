@@ -1,38 +1,23 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {useRoute} from '@react-navigation/native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import {useQuery} from '@apollo/client';
 
-import {ActivityIndicator, Colors} from 'react-native-paper';
-import {StyleSheet, View} from 'react-native';
+import {Colors} from 'react-native-paper';
 import {ARTIST} from '../../graphql/artists';
-import artistMock from '../../mocks/artistMock';
 import ArtistBiography from './ArtistBiography';
 import ArtistHeader from './ArtistHeader';
 import ArtistArtworks from './ArtistArtworks';
+import Loader from '../../components/Loader';
+import useMockedQuery from '../../hooks/useMockedQuery';
 
 const ArtistTab = createMaterialTopTabNavigator();
 
-const styles = StyleSheet.create({
-  loader: {justifyContent: 'center', alignItems: 'center', flexGrow: 1},
-});
-
-export default function ArtistDetailScreen({mock = artistMock}) {
+export default function ArtistDetailScreen() {
   const {params} = useRoute();
-  const {data, loading} = mock
-    ? {
-        ...mock,
-        loading: false,
-        error: false,
-      }
-    : useQuery(ARTIST, {variables: {id: params.id}});
+  const {data, loading} = useMockedQuery(ARTIST, {variables: {id: params.id}});
 
   if (loading) {
-    return (
-      <View style={styles.loader}>
-        <ActivityIndicator color={Colors.black} />
-      </View>
-    );
+    return <Loader />;
   }
 
   const {name, nationality, birthday, location, biography, artworks} = data && data.artist;
@@ -49,7 +34,7 @@ export default function ArtistDetailScreen({mock = artistMock}) {
     <>
       <ArtistHeader name={name} nationality={nationality} birthday={birthday} location={location} />
       <ArtistTab.Navigator
-        initialRouteName="Biography"
+        initialRouteName="Works"
         tabBarOptions={{
           indicatorStyle: {
             backgroundColor: Colors.black,

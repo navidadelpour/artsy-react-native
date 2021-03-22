@@ -1,6 +1,8 @@
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 import {FlatList, StyleSheet} from 'react-native';
 import {Caption, Card, Subheading, Title} from 'react-native-paper';
+
 import BasicIconMessage from '../../components/BasicIconMessage';
 
 const styles = StyleSheet.create({
@@ -37,13 +39,20 @@ export default function ArtistArtworks({artworks}) {
 }
 
 function ArtistArtwork({item, index}) {
+  const navigation = useNavigation();
   const isEven = (index + 1) % 2 === 0;
   const isFirstTwoCards = index < 2;
-  const {title, image, category, price} = item;
+  const {id, title, image, category, price} = item;
   const url = image && image.url;
 
+  function onPress() {
+    navigation.navigate('Artwork', {id, artworkName: title});
+  }
+
   return (
-    <Card style={[styles.card, isEven && styles.evenCard, isFirstTwoCards && styles.firstTwoCard]}>
+    <Card
+      style={[styles.card, isEven && styles.evenCard, isFirstTwoCards && styles.firstTwoCard]}
+      onPress={onPress}>
       <Card.Cover source={{uri: url}} />
       <Card.Content style={styles.cardContent}>
         {price ? <Title>{price}</Title> : null}

@@ -40,6 +40,9 @@ export const ARTIST = gql`
       nationality
       birthday
       location
+      image {
+        url
+      }
       biography {
         id
         author {
