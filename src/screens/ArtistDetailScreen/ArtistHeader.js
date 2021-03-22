@@ -2,19 +2,19 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import {Caption, Colors, Paragraph, Title} from 'react-native-paper';
+import {Caption, Paragraph, Title, useTheme} from 'react-native-paper';
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: Colors.white,
     display: 'flex',
     alignItems: 'center',
   },
 });
 
 export default function ArtistHeader({name, nationality, birthday, location}) {
+  const theme = useTheme();
   return (
-    <View style={styles.wrapper}>
+    <View style={[styles.wrapper, {backgroundColor: theme.colors.surface}]}>
       <Title>{name}</Title>
       <Paragraph>
         {nationality}, b {birthday}

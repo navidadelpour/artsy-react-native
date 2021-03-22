@@ -1,5 +1,17 @@
-import {InMemoryCache} from '@apollo/client';
+import {InMemoryCache, makeVar} from '@apollo/client';
 
-const cache = new InMemoryCache();
+export const isDarkTheme = makeVar(false);
+
+const cache = new InMemoryCache({
+  typePolicies: {
+    Query: {
+      fields: {
+        isDarkTheme() {
+          return isDarkTheme();
+        },
+      },
+    },
+  },
+});
 
 export default cache;
