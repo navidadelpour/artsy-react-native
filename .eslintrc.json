@@ -12,6 +12,7 @@
     "react/jsx-props-no-spreading": "off",
     "camelcase": "off",
     "no-underscore-dangle": "off",
+    "import/prefer-default-export": "off",
     "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
     "prettier/prettier": [
       "error",
