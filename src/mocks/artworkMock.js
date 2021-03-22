@@ -1,0 +1,48 @@
+export default {
+  data: {
+    artwork: {
+      artist: {
+        id: 'andy-warhol',
+      },
+      formattedMetadata: 'Andy Warhol, ‘Marilyn’, 1967, Seattle Art Museum',
+      contact_message: null,
+      priceIncludesTax: false,
+      width: '36',
+      height: '36',
+      widthCm: 91.4,
+      heightCm: 91.4,
+      sizeScore: 35.984,
+      publisher: null,
+      signature: null,
+      displayLabel: 'Marilyn',
+      medium: 'Screenprint on paper',
+      image_rights:
+        '© 2012 The Andy Warhol Foundation for the Visual Arts, Inc. / Artists Rights Society (ARS), New York',
+      image_title: 'Andy Warhol, ‘Marilyn’, 1967',
+      literature: null,
+      manufacturer: null,
+      metric: 'in',
+      provenance: 'Bequest of Kathryn L. Skinner',
+      series: null,
+      published: true,
+      conditionDescription: {
+        label: 'Conditions',
+        details: 'sldjf;slf',
+      },
+      certificateOfAuthenticity: null,
+      fair: null,
+      framed: null,
+      partner: {
+        name: 'Seattle Art Museum',
+      },
+      _id: '5436c9967261690809c80200',
+      title: 'Marilyn',
+      category: 'Print',
+      is_sold: false,
+      price: '23$',
+      image: {
+        url: 'https://d32dm0rphc51dk.cloudfront.net/iAUTdeZjDShoGHdYKkQvIg/tall.jpg',
+      },
+    },
+  },
+};
