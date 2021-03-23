@@ -66,6 +66,16 @@ export const ARTIST = gql`
           url
         }
       }
+      shows {
+        id
+        name
+        start_at
+        end_at
+        city
+        meta_image {
+          url
+        }
+      }
     }
   }
 `;

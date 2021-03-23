@@ -5,7 +5,7 @@ import artworkMock from '../mocks/artworkMock';
 import popularArtistsMock from '../mocks/popularArtistsMock';
 import trendingArtistsMock from '../mocks/trendingArtistsMock';
 
-const SHOULD_MOCK = true;
+const SHOULD_MOCK = false;
 
 const mocks = {
   PopularArtists: popularArtistsMock,

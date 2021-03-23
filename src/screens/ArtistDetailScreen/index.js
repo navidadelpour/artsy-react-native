@@ -9,6 +9,7 @@ import ArtistHeader from './ArtistHeader';
 import ArtistArtworks from './ArtistArtworks';
 import Loader from '../../components/Loader';
 import useMockedQuery from '../../hooks/useMockedQuery';
+import ArtistShows from './ArtistShows';
 
 const ArtistTab = createMaterialTopTabNavigator();
 
@@ -21,7 +22,7 @@ export default function ArtistDetailScreen() {
     return <Loader />;
   }
 
-  const {name, nationality, birthday, location, biography, artworks} = data && data.artist;
+  const {name, nationality, birthday, location, biography, artworks, shows} = data && data.artist;
 
   function _ArtistBiography(props) {
     return <ArtistBiography biography={biography} {...props} />;
@@ -29,6 +30,10 @@ export default function ArtistDetailScreen() {
 
   function _ArtistArtworks(props) {
     return <ArtistArtworks artworks={artworks} {...props} />;
+  }
+
+  function _ArtistShows(props) {
+    return <ArtistShows shows={shows} {...props} />;
   }
 
   return (
@@ -43,6 +48,7 @@ export default function ArtistDetailScreen() {
         }}>
         <ArtistTab.Screen name="Biography" component={_ArtistBiography} />
         <ArtistTab.Screen name="Works" component={_ArtistArtworks} />
+        <ArtistTab.Screen name="Shows" component={_ArtistShows} />
       </ArtistTab.Navigator>
     </>
   );

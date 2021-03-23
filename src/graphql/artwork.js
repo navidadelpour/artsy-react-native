@@ -49,7 +49,9 @@ export const ARTWORK = gql`
         name
         birthday
         nationality
-        image
+        image {
+          url
+        }
       }
       image {
         url

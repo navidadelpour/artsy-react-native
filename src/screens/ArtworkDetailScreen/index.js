@@ -31,7 +31,7 @@ export default function ArtworkDetailScreen() {
   });
 
   if (error) {
-    return <BasicIconMessage error icon="warning" message="There is some problems" />;
+    return <BasicIconMessage error icon="warning" message="Unknown error happend" />;
   }
 
   if (loading) {
@@ -39,7 +39,7 @@ export default function ArtworkDetailScreen() {
   }
 
   const {artwork} = data;
-  const {image, title, formattedMetadata, artist} = artwork;
+  const {image, formattedMetadata, artist} = artwork;
   const {name, birthday, nationality, image: artistImage} = artist;
   const url = image && image.url;
   const artistUrl = artistImage && artistImage.url;
@@ -51,7 +51,7 @@ export default function ArtworkDetailScreen() {
   return (
     <ScrollView>
       <ArtworkImage url={url} />
-      <Caption style={styles.imageCaption}>{formattedMetadata || title}</Caption>
+      <Caption style={styles.imageCaption}>{formattedMetadata}</Caption>
       <Card.Title
         title={name}
         subtitle={`${nationality}, b ${birthday}`}
