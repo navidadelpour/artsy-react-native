@@ -129,69 +129,54 @@ export default {
         {
           id: 'leeum-samsung-museum-of-art-leeum-collection-beyond-space',
           name: 'Leeum Collection: Beyond Space',
-          description:
-            'Museum 2 of Leeum exhibits the museum\'s modern and contemporary permanent collection under the theme, "Beyond Space." The exhibition explores the topics of expressionist tendencies in modern art, investigations into the fundamentals of art, and hybrid art practices of recent.',
-          start_at: '2014-08-19T12:00:00+00:00',
-          end_at: '2999-12-31T12:00:00+00:00',
+          exhibition_period: 'Aug 19, 2014 – Dec 31, 2999',
           city: 'Seoul ',
-          meta_image: {
+          cover_image: {
             url: 'https://d32dm0rphc51dk.cloudfront.net/vlXf0LFyHT9wTe7ODTMuJg/larger.jpg',
           },
         },
         {
           id: 'pinto-gallery-andy-warhol-this-is-not-by-me',
           name: 'Andy Warhol: this is not by me!',
-          description: '',
-          start_at: '2021-03-20T12:00:00+00:00',
-          end_at: '2021-12-31T12:00:00+00:00',
+          exhibition_period: 'Mar 20 – Dec 31',
           city: null,
-          meta_image: {
+          cover_image: {
             url: 'https://d32dm0rphc51dk.cloudfront.net/fxRvNVF9uAlhaW2bgCzm8A/medium.jpg',
           },
         },
         {
           id: 'omer-tiroche-gallery-the-power-of-advertising',
           name: 'The Power of Advertising',
-          description:
-            'The Power of Advertising examines the work of five leading modern artists who started their careers working in graphic design, sign painting or advertising. The exhibition aims to illustrate how the styles and tropes of advertising became a key influence in modern art movements.',
-          start_at: '2021-03-01T12:00:00+00:00',
-          end_at: '2021-09-03T12:00:00+00:00',
+          exhibition_period: 'Mar 1 – Sep 3',
           city: null,
-          meta_image: {
+          cover_image: {
             url: 'https://d32dm0rphc51dk.cloudfront.net/2BkdUCL6BXLwwOijixKooA/medium.jpg',
           },
         },
         {
           id: 'ludorff-recent-acquisitions-spring-2021',
           name: 'Recent Acquisitions Spring 2021',
-          description: '',
-          start_at: '2021-03-26T12:00:00+00:00',
-          end_at: '2021-08-28T12:00:00+00:00',
+          exhibition_period: 'Mar 26 – Aug 28',
           city: 'Düsseldorf',
-          meta_image: {
+          cover_image: {
             url: 'https://d32dm0rphc51dk.cloudfront.net/jHEsersYFhkj7kWAIxTsDQ/featured.jpg',
           },
         },
         {
           id: 'alpha-137-gallery-art-with-text-the-message-is-the-medium',
           name: 'Art With Text: The Message is the Medium',
-          description: '',
-          start_at: '2020-11-01T12:00:00+00:00',
-          end_at: '2021-07-29T12:00:00+00:00',
+          exhibition_period: 'Nov 1, 2020 – Jul 29, 2021',
           city: null,
-          meta_image: {
+          cover_image: {
             url: 'https://d32dm0rphc51dk.cloudfront.net/AVKh7wMqEsIWmZxN7TZdig/medium.jpg',
           },
         },
         {
           id: 'alpha-137-gallery-rare-and-collectible-artist-books',
           name: 'Rare and Collectible Artist Books',
-          description:
-            '"I have always thought of Paradise as a kind of library"  - Jorge Luis Borges',
-          start_at: '2020-08-31T12:00:00+00:00',
-          end_at: '2021-07-28T12:00:00+00:00',
+          exhibition_period: 'Aug 31, 2020 – Jul 28, 2021',
           city: null,
-          meta_image: {
+          cover_image: {
             url: 'https://d32dm0rphc51dk.cloudfront.net/jv9q7nWKrS-7XUCHxpWKWw/larger.jpg',
           },
         },
@@ -199,44 +184,36 @@ export default {
           id:
             'alpha-137-gallery-abstract-expressionist-works-editions-works-on-paper-and-paintings',
           name: 'Abstract Expressionist Works: Editions, Works on Paper and Paintings',
-          description: '',
-          start_at: '2021-03-20T12:00:00+00:00',
-          end_at: '2021-06-28T12:00:00+00:00',
+          exhibition_period: 'Mar 20 – Jun 28',
           city: null,
-          meta_image: {
+          cover_image: {
             url: 'https://d32dm0rphc51dk.cloudfront.net/u4vl6S3smsAUU6AYCWRGGw/medium.jpg',
           },
         },
         {
           id: 'alpha-137-gallery-collecting-by-color-yellow',
           name: 'Collecting by Color: Yellow',
-          description: '',
-          start_at: '2020-10-01T12:00:00+00:00',
-          end_at: '2021-06-28T12:00:00+00:00',
+          exhibition_period: 'Oct 1, 2020 – Jun 28, 2021',
           city: null,
-          meta_image: {
+          cover_image: {
             url: 'https://d32dm0rphc51dk.cloudfront.net/GyOgm6GuYIxCpCyUlwWHlg/medium.jpg',
           },
         },
         {
           id: 'alpha-137-gallery-collecting-by-color-pink',
           name: 'Collecting by Color: Pink',
-          description: '',
-          start_at: '2020-12-30T12:00:00+00:00',
-          end_at: '2021-06-28T12:00:00+00:00',
+          exhibition_period: 'Dec 30, 2020 – Jun 28, 2021',
           city: null,
-          meta_image: {
+          cover_image: {
             url: 'https://d32dm0rphc51dk.cloudfront.net/eZQyScrvoItd08MwYj9JeQ/medium.jpg',
           },
         },
         {
           id: 'alpha-137-gallery-collecting-by-color-blue',
           name: 'Collecting by Color: Blue',
-          description: '"Blue has no dimensions, it is beyond dimensions." Yves Klein',
-          start_at: '2020-11-01T12:00:00+00:00',
-          end_at: '2021-06-28T12:00:00+00:00',
+          exhibition_period: 'Nov 1, 2020 – Jun 28, 2021',
           city: null,
-          meta_image: {
+          cover_image: {
             url: 'https://d32dm0rphc51dk.cloudfront.net/m-riRijTXlfqqrBUkM4P-g/medium.jpg',
           },
         },

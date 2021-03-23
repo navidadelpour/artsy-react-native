@@ -1,9 +1,8 @@
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {FlatList, Text} from 'react-native';
+import {FlatList} from 'react-native';
 import {Caption, Subheading} from 'react-native-paper';
 
-import Moment from 'react-moment';
 import BasicIconMessage from '../../components/BasicIconMessage';
 import ArtistDetailCard from './ArtistDetailCard';
 
@@ -17,7 +16,7 @@ export default function ArtistShows({shows}) {
 
 function ArtistShow({item, index}) {
   const navigation = useNavigation();
-  const {id, name, meta_image: image, city, start_at, end_at} = item;
+  const {id, name, cover_image: image, city, exhibition_period} = item;
   const url = image && image.url;
 
   function onPress() {
@@ -28,14 +27,9 @@ function ArtistShow({item, index}) {
     <ArtistDetailCard image={url} index={index} onPress={onPress}>
       {name ? <Subheading>{name}</Subheading> : null}
       <Caption>
-        {city ? `${city}, ` : ''}
-        <Moment element={Text} format="MMM DD">
-          {start_at}
-        </Moment>
-        {' - '}
-        <Moment element={Text} format="MMM DD">
-          {end_at}
-        </Moment>
+        {city}
+        {city && exhibition_period && ', '}
+        {exhibition_period}
       </Caption>
     </ArtistDetailCard>
   );

@@ -69,10 +69,9 @@ export const ARTIST = gql`
       shows {
         id
         name
-        start_at
-        end_at
+        exhibition_period
         city
-        meta_image {
+        cover_image {
           url
         }
       }
