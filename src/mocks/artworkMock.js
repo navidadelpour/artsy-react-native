@@ -3,6 +3,12 @@ export default {
     artwork: {
       artist: {
         id: 'andy-warhol',
+        nationality: 'American',
+        birthday: '1928',
+        name: 'Andy Warhol',
+        image: {
+          url: 'https://d32dm0rphc51dk.cloudfront.net/E-k-uLoQADM8AjadsSKHrA/tall.jpg',
+        },
       },
       formattedMetadata: 'Andy Warhol, ‘Marilyn’, 1967, Seattle Art Museum',
       contact_message: null,

@@ -5,7 +5,7 @@ import {View} from 'react-native';
 import {IconButton, useTheme} from 'react-native-paper';
 import ArtistListScreen from './screens/ArtistListScreen';
 import ArtistDetailScreen from './screens/ArtistDetailScreen';
-import BiographyDetail from './screens/ArtistDetailScreen/BiographyDetail';
+import BiographyDetailScreen from './screens/BiographyDetailScreen';
 import ArtworkDetailScreen from './screens/ArtworkDetailScreen';
 import ArtsyLogoLight from './assets/logo/artsy-logo-light.svg';
 import ArtsyLogoDark from './assets/logo/artsy-logo-dark.svg';
@@ -66,7 +66,7 @@ export default function Navigations() {
         />
         <Stack.Screen
           name="BiographyDetail"
-          component={BiographyDetail}
+          component={BiographyDetailScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

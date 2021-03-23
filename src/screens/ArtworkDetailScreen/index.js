@@ -1,13 +1,13 @@
 import React from 'react';
-import {useRoute} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 import {ScrollView, StyleSheet} from 'react-native';
-import {Caption} from 'react-native-paper';
+import {Avatar, Caption, Card} from 'react-native-paper';
 import BasicIconMessage from '../../components/BasicIconMessage';
+import Button from '../../components/Button';
 import Loader from '../../components/Loader';
 import {ARTWORK} from '../../graphql/artwork';
 import useMockedQuery from '../../hooks/useMockedQuery';
 import ArtworkImage from './ArtworkImage';
-import ArtistInfo from './ArtworkArtistInfo';
 import ArtworkInformation from './ArtworkInformation';
 
 const styles = StyleSheet.create({
@@ -15,10 +15,16 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     paddingHorizontal: 4,
   },
+  button: {
+    display: 'flex',
+    flexGrow: 1,
+    margin: 16,
+  },
 });
 
 export default function ArtworkDetailScreen() {
   const {params} = useRoute();
+  const navigation = useNavigation();
   const id = params && params.id;
   const {data, loading, error} = useMockedQuery(ARTWORK, {
     variables: {id},
@@ -34,15 +40,27 @@ export default function ArtworkDetailScreen() {
 
   const {artwork} = data;
   const {image, title, formattedMetadata, artist} = artwork;
+  const {name, birthday, nationality, image: artistImage} = artist;
   const url = image && image.url;
-  const artistId = artist && artist.id;
+  const artistUrl = artistImage && artistImage.url;
+
+  function onARButtonPress() {
+    navigation.navigate('ArtworkAR', {artwork});
+  }
 
   return (
     <ScrollView>
       <ArtworkImage url={url} />
       <Caption style={styles.imageCaption}>{formattedMetadata || title}</Caption>
-      <ArtistInfo id={artistId} />
+      <Card.Title
+        title={name}
+        subtitle={`${nationality}, b ${birthday}`}
+        left={props => <Avatar.Image {...props} source={{uri: artistUrl}} />}
+      />
       <ArtworkInformation artwork={artwork} />
+      <Button mode="contained" style={styles.button} onPress={onARButtonPress}>
+        View in Augmented Reality
+      </Button>
     </ScrollView>
   );
 }

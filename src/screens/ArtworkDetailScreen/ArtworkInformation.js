@@ -68,7 +68,7 @@ export default function ArtworkInformation({artwork}) {
             <View style={styles.priceWrapper}>
               <Paragraph style={styles.priceValue}>{price}</Paragraph>
               <Paragraph style={[styles.soldLabel, soldLabelColor]}>
-                {is_sold ? 'Sold' : 'Not sold yet'}
+                {is_sold ? 'Sold' : 'Not sold'}
               </Paragraph>
             </View>
             <Divider style={styles.divider} />

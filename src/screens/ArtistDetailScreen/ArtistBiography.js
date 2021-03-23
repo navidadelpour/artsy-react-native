@@ -3,7 +3,8 @@ import {ScrollView, StyleSheet, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import Moment from 'react-moment';
 
-import {Button, Caption, Card, Colors, Paragraph, Subheading, Title} from 'react-native-paper';
+import {Caption, Card, Paragraph, Subheading, Title} from 'react-native-paper';
+import Button from '../../components/Button';
 import BasicIconMessage from '../../components/BasicIconMessage';
 
 const styles = StyleSheet.create({
@@ -24,7 +25,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexGrow: 1,
     marginTop: 16,
-    backgroundColor: Colors.black,
   },
 });
 
