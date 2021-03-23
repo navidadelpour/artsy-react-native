@@ -1,6 +1,6 @@
 import React from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
-import {Card, ActivityIndicator, Colors, Caption, Subheading} from 'react-native-paper';
+import {Card, ActivityIndicator, Colors, Caption, Subheading, Paragraph} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 import useMockedQuery from '../../hooks/useMockedQuery';
 import BasicIconMessage from '../../components/BasicIconMessage';
@@ -53,7 +53,9 @@ function ArtistCard({item, index}) {
       <Card.Content style={styles.cardContent}>
         <Subheading>{name}</Subheading>
         <Caption>
-          {nationality}, b {birthday}
+          {nationality}
+          {nationality && birthday && ', '}
+          {birthday && `b ${birthday}`}
         </Caption>
       </Card.Content>
     </Card>
@@ -71,7 +73,7 @@ export default function ArtistsList({query, variables, dataKey, subheading}) {
 
   return (
     <View style={styles.wrapper}>
-      <Caption style={styles.subheading}>{subheading}</Caption>
+      <Paragraph style={styles.subheading}>{subheading}</Paragraph>
       {error && <BasicIconMessage error icon="warning" message="Failed Fetching artists!" />}
       {loading ? (
         <View style={styles.loader}>

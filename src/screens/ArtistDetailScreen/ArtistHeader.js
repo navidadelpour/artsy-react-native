@@ -17,7 +17,9 @@ export default function ArtistHeader({name, nationality, birthday, location}) {
     <View style={[styles.wrapper, {backgroundColor: theme.colors.surface}]}>
       <Title>{name}</Title>
       <Paragraph>
-        {nationality}, b {birthday}
+        {nationality}
+        {nationality && birthday && ', '}
+        {birthday && `b ${birthday}`}
       </Paragraph>
       {location ? (
         <Caption>

@@ -2,7 +2,7 @@ import React from 'react';
 import {useRoute} from '@react-navigation/native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
-import {Colors} from 'react-native-paper';
+import {useTheme} from 'react-native-paper';
 import {ARTIST} from '../../graphql/artists';
 import ArtistBiography from './ArtistBiography';
 import ArtistHeader from './ArtistHeader';
@@ -13,8 +13,9 @@ import useMockedQuery from '../../hooks/useMockedQuery';
 const ArtistTab = createMaterialTopTabNavigator();
 
 export default function ArtistDetailScreen() {
+  const theme = useTheme();
   const {params} = useRoute();
-  const {data, loading} = useMockedQuery(ARTIST, {variables: {id: params.id}});
+  const {data, loading} = useMockedQuery(ARTIST, {variables: {id: params?.id}});
 
   if (loading) {
     return <Loader />;
@@ -37,7 +38,7 @@ export default function ArtistDetailScreen() {
         initialRouteName="Works"
         tabBarOptions={{
           indicatorStyle: {
-            backgroundColor: Colors.black,
+            backgroundColor: theme.colors.text,
           },
         }}>
         <ArtistTab.Screen name="Biography" component={_ArtistBiography} />

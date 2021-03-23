@@ -53,7 +53,7 @@ export default function Navigations() {
           name="Artist"
           component={ArtistDetailScreen}
           options={({route}) => ({
-            title: route.params.artistName,
+            title: route?.params?.artistName,
             headerStyle: {elevation: 0},
           })}
         />
@@ -61,7 +61,7 @@ export default function Navigations() {
           name="Artwork"
           component={ArtworkDetailScreen}
           options={({route}) => ({
-            title: route.params.artworkName,
+            title: route?.params?.artworkName,
           })}
         />
         <Stack.Screen

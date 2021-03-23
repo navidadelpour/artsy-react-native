@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Colors, Divider, Headline, List, Paragraph} from 'react-native-paper';
+import {Colors, Divider, Headline, List, Paragraph, useTheme} from 'react-native-paper';
 
 const styles = StyleSheet.create({
   informationWrapper: {
@@ -43,10 +43,15 @@ export default function ArtworkInformation({artwork}) {
     is_sold,
     title,
   } = artwork;
+  const theme = useTheme();
+
+  const color = is_sold ? 'red' : 'green';
+  const colorShade = theme.dark ? 100 : 900;
+  const backgroundColorShade = theme.dark ? 900 : 100;
 
   const soldLabelColor = {
-    backgroundColor: is_sold ? Colors.red50 : Colors.green50,
-    color: is_sold ? Colors.red600 : Colors.green600,
+    backgroundColor: Colors[color + backgroundColorShade],
+    color: Colors[color + colorShade],
   };
 
   return (
