@@ -71,6 +71,7 @@ export const ARTIST = gql`
         name
         exhibition_period
         city
+        status
         cover_image {
           url
         }

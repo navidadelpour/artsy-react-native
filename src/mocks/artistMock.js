@@ -131,6 +131,7 @@ export default {
           name: 'Leeum Collection: Beyond Space',
           exhibition_period: 'Aug 19, 2014 – Dec 31, 2999',
           city: 'Seoul ',
+          status: 'running',
           cover_image: {
             url: 'https://d32dm0rphc51dk.cloudfront.net/vlXf0LFyHT9wTe7ODTMuJg/larger.jpg',
           },
@@ -140,6 +141,7 @@ export default {
           name: 'Andy Warhol: this is not by me!',
           exhibition_period: 'Mar 20 – Dec 31',
           city: null,
+          status: 'running',
           cover_image: {
             url: 'https://d32dm0rphc51dk.cloudfront.net/fxRvNVF9uAlhaW2bgCzm8A/medium.jpg',
           },
@@ -149,6 +151,7 @@ export default {
           name: 'The Power of Advertising',
           exhibition_period: 'Mar 1 – Sep 3',
           city: null,
+          status: 'running',
           cover_image: {
             url: 'https://d32dm0rphc51dk.cloudfront.net/2BkdUCL6BXLwwOijixKooA/medium.jpg',
           },
@@ -158,6 +161,7 @@ export default {
           name: 'Recent Acquisitions Spring 2021',
           exhibition_period: 'Mar 26 – Aug 28',
           city: 'Düsseldorf',
+          status: 'running',
           cover_image: {
             url: 'https://d32dm0rphc51dk.cloudfront.net/jHEsersYFhkj7kWAIxTsDQ/featured.jpg',
           },
@@ -167,6 +171,7 @@ export default {
           name: 'Art With Text: The Message is the Medium',
           exhibition_period: 'Nov 1, 2020 – Jul 29, 2021',
           city: null,
+          status: 'running',
           cover_image: {
             url: 'https://d32dm0rphc51dk.cloudfront.net/AVKh7wMqEsIWmZxN7TZdig/medium.jpg',
           },
@@ -176,6 +181,7 @@ export default {
           name: 'Rare and Collectible Artist Books',
           exhibition_period: 'Aug 31, 2020 – Jul 28, 2021',
           city: null,
+          status: 'running',
           cover_image: {
             url: 'https://d32dm0rphc51dk.cloudfront.net/jv9q7nWKrS-7XUCHxpWKWw/larger.jpg',
           },
@@ -186,6 +192,7 @@ export default {
           name: 'Abstract Expressionist Works: Editions, Works on Paper and Paintings',
           exhibition_period: 'Mar 20 – Jun 28',
           city: null,
+          status: 'running',
           cover_image: {
             url: 'https://d32dm0rphc51dk.cloudfront.net/u4vl6S3smsAUU6AYCWRGGw/medium.jpg',
           },
@@ -195,6 +202,7 @@ export default {
           name: 'Collecting by Color: Yellow',
           exhibition_period: 'Oct 1, 2020 – Jun 28, 2021',
           city: null,
+          status: 'running',
           cover_image: {
             url: 'https://d32dm0rphc51dk.cloudfront.net/GyOgm6GuYIxCpCyUlwWHlg/medium.jpg',
           },
@@ -204,6 +212,7 @@ export default {
           name: 'Collecting by Color: Pink',
           exhibition_period: 'Dec 30, 2020 – Jun 28, 2021',
           city: null,
+          status: 'running',
           cover_image: {
             url: 'https://d32dm0rphc51dk.cloudfront.net/eZQyScrvoItd08MwYj9JeQ/medium.jpg',
           },
@@ -213,6 +222,7 @@ export default {
           name: 'Collecting by Color: Blue',
           exhibition_period: 'Nov 1, 2020 – Jun 28, 2021',
           city: null,
+          status: 'running',
           cover_image: {
             url: 'https://d32dm0rphc51dk.cloudfront.net/m-riRijTXlfqqrBUkM4P-g/medium.jpg',
           },

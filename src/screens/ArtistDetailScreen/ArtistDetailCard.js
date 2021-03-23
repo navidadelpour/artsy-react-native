@@ -20,13 +20,18 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function ArtistDetailCard({children, image, index, ...props}) {
+export default function ArtistDetailCard({children, image, index, style, ...props}) {
   const isEven = (index + 1) % 2 === 0;
   const isFirstTwoCards = index < 2;
 
   return (
     <Card
-      style={[styles.card, isEven && styles.evenCard, isFirstTwoCards && styles.firstTwoCard]}
+      style={[
+        styles.card,
+        isEven && styles.evenCard,
+        isFirstTwoCards && styles.firstTwoCard,
+        style,
+      ]}
       {...props}>
       <Card.Cover source={{uri: image}} />
       <Card.Content style={styles.cardContent}>{children}</Card.Content>
