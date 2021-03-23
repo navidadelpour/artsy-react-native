@@ -36,6 +36,9 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     height: 320,
   },
+  error: {
+    height: 320,
+  },
 });
 
 function ArtistCard({item, index}) {
@@ -74,12 +77,20 @@ export default function ArtistsList({query, variables, dataKey, subheading}) {
   return (
     <View style={styles.wrapper}>
       <Paragraph style={styles.subheading}>{subheading}</Paragraph>
-      {error && <BasicIconMessage error icon="warning" message="Failed Fetching artists!" />}
-      {loading ? (
+      {error && (
+        <BasicIconMessage
+          error
+          style={styles.error}
+          icon="warning"
+          message="Failed Fetching artists!"
+        />
+      )}
+      {loading && (
         <View style={styles.loader}>
           <ActivityIndicator color={Colors.black} />
         </View>
-      ) : (
+      )}
+      {artists && (
         <FlatList
           horizontal
           style={styles.list}

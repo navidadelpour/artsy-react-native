@@ -8,10 +8,10 @@ const styles = StyleSheet.create({
   wrapper: {justifyContent: 'center', alignItems: 'center', flexGrow: 1},
 });
 
-export default function BasicIconMessage({error = false, icon, message}) {
+export default function BasicIconMessage({style, error = false, icon, message}) {
   const color = error ? Colors.red400 : Colors.grey400;
   return (
-    <View style={styles.wrapper}>
+    <View style={[styles.wrapper, style]}>
       <Icon name={icon} size={50} color={color} />
       <Text style={{color}}>{message}</Text>
     </View>
