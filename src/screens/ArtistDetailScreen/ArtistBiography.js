@@ -48,7 +48,7 @@ export default function ArtistBiography({biography}) {
   const link = `https://www.artsy.net${href}`;
 
   function onPress() {
-    navigation.navigate('BiographyDetail', {link});
+    navigation.navigate('Webview', {link});
   }
 
   return (

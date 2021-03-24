@@ -5,11 +5,12 @@ import {View} from 'react-native';
 import {IconButton, useTheme} from 'react-native-paper';
 import ArtistListScreen from './screens/ArtistListScreen';
 import ArtistDetailScreen from './screens/ArtistDetailScreen';
-import BiographyDetailScreen from './screens/BiographyDetailScreen';
+import WebviewScreen from './screens/WebviewScreen';
 import ArtworkDetailScreen from './screens/ArtworkDetailScreen';
 import ArtsyLogoLight from './assets/logo/artsy-logo-light.svg';
 import ArtsyLogoDark from './assets/logo/artsy-logo-dark.svg';
 import {isDarkTheme} from './apollo/cache';
+import ShowDetailScreen from './screens/ShowDetailScreen';
 
 const Stack = createStackNavigator();
 
@@ -65,10 +66,13 @@ export default function Navigations() {
           })}
         />
         <Stack.Screen
-          name="BiographyDetail"
-          component={BiographyDetailScreen}
-          options={{headerShown: false}}
+          name="Show"
+          component={ShowDetailScreen}
+          options={({route}) => ({
+            title: route?.params?.showName,
+          })}
         />
+        <Stack.Screen name="Webview" component={WebviewScreen} options={{headerShown: false}} />
       </Stack.Navigator>
     </>
   );

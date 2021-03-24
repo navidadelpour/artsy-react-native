@@ -11,6 +11,7 @@ export const SHOW = gql`
       kind
       status
       press_release
+      href
       counts {
         artists
         artworks

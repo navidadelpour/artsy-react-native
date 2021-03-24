@@ -59,7 +59,7 @@ function ThemeController({children}) {
   }, []);
 
   useEffect(() => {
-    AsyncStorage.setItem('isDarkTheme', `${darkMode}`).catch(console.log);
+    AsyncStorage.setItem('isDarkTheme', `${darkMode}`);
   }, [darkMode]);
 
   if (darkMode === undefined) {

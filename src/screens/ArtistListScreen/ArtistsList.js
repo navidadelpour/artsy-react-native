@@ -10,21 +10,19 @@ const styles = StyleSheet.create({
     marginTop: 16,
     marginBottom: 16,
   },
+  contentContainerStyle: {
+    paddingTop: 8,
+    paddingLeft: 16,
+  },
   subheading: {
     textTransform: 'uppercase',
     marginLeft: 16,
-  },
-  list: {
-    marginTop: 8,
   },
   card: {
     width: 200,
     padding: 8,
     marginRight: 16,
     marginBottom: 16,
-  },
-  firstCard: {
-    marginLeft: 16,
   },
   cardContent: {
     paddingHorizontal: 0,
@@ -41,8 +39,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function ArtistCard({item, index}) {
-  const isFirstItem = index === 0;
+function ArtistCard({item}) {
   const navigation = useNavigation();
   const {id, image, name, nationality, birthday} = item;
 
@@ -51,7 +48,7 @@ function ArtistCard({item, index}) {
   }
 
   return (
-    <Card style={[styles.card, isFirstItem && styles.firstCard]} onPress={onPress}>
+    <Card style={styles.card} onPress={onPress}>
       <Card.Cover source={{uri: image.url}} />
       <Card.Content style={styles.cardContent}>
         <Subheading>{name}</Subheading>
@@ -93,6 +90,7 @@ export default function ArtistsList({query, variables, dataKey, subheading}) {
       {artists && (
         <FlatList
           horizontal
+          contentContainerStyle={styles.contentContainerStyle}
           style={styles.list}
           data={artists}
           renderItem={props => <ArtistCard {...props} />}
