@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     paddingTop: 8,
     paddingLeft: 16,
   },
+  listTitle: {fontWeight: '500'},
   subheading: {
     textTransform: 'uppercase',
     marginLeft: 16,
@@ -51,7 +52,7 @@ function ArtistCard({item}) {
     <Card style={styles.card} onPress={onPress}>
       <Card.Cover source={{uri: image.url}} />
       <Card.Content style={styles.cardContent}>
-        <Subheading>{name}</Subheading>
+        <Subheading style={styles.listTitle}>{name}</Subheading>
         <Caption>
           {nationality}
           {nationality && birthday && ', '}
