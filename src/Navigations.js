@@ -37,7 +37,7 @@ function ToggleThemeButton(props) {
 export default function Navigations() {
   return (
     <>
-      <StatusBar translucent backgroundColor="black" />
+      <StatusBar backgroundColor="black" />
       <Stack.Navigator
         initialRouteName="Artists"
         screenOptions={{
