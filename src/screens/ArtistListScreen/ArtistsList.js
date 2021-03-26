@@ -1,9 +1,10 @@
 import React from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
-import {Card, ActivityIndicator, Colors, Caption, Subheading, Paragraph} from 'react-native-paper';
+import {Card, Caption, Subheading, Paragraph} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 import useMockedQuery from '../../hooks/useMockedQuery';
 import BasicIconMessage from '../../components/BasicIconMessage';
+import Loader from '../../components/Loader';
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -85,7 +86,7 @@ export default function ArtistsList({query, variables, dataKey, subheading}) {
       )}
       {loading && (
         <View style={styles.loader}>
-          <ActivityIndicator color={Colors.black} />
+          <Loader />
         </View>
       )}
       {artists && (

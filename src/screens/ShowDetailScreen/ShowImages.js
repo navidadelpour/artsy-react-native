@@ -3,6 +3,7 @@ import {Image, View, Modal, StyleSheet} from 'react-native';
 import {FlatList, TouchableHighlight} from 'react-native-gesture-handler';
 import ImageViewer from 'react-native-image-zoom-viewer';
 import BackgroundIconButton from '../../components/BackgroundIconButton';
+import BasicIconMessage from '../../components/BasicIconMessage';
 
 const styles = StyleSheet.create({
   list: {
@@ -32,6 +33,11 @@ export default function ShowImages({images}) {
   function closeModal() {
     setImageModalIndex(-1);
   }
+
+  if (!images || images.length === 0) {
+    return <BasicIconMessage message="No images available" icon="error-outline" />;
+  }
+
   return (
     <>
       <FlatList
