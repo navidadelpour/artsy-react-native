@@ -1,52 +1,27 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {StatusBar, View} from 'react-native';
-import {IconButton, useTheme} from 'react-native-paper';
+import {StatusBar} from 'react-native';
 import ArtistListScreen from './screens/ArtistListScreen';
 import ArtistDetailScreen from './screens/ArtistDetailScreen';
 import WebviewScreen from './screens/WebviewScreen';
 import ArtworkDetailScreen from './screens/ArtworkDetailScreen';
-import ArtsyLogoLight from './assets/logo/artsy-logo-light.svg';
-import ArtsyLogoDark from './assets/logo/artsy-logo-dark.svg';
-import {isDarkTheme} from './apollo/cache';
 import ShowDetailScreen from './screens/ShowDetailScreen';
+import ArtsyLogoComponent from './components/ArtsyLogoComponent';
+import ToggleThemeButton from './components/ToggleThemeButton';
 
 const Stack = createStackNavigator();
-
-function ArtsyLogoComponent(props) {
-  const theme = useTheme();
-  return (
-    <View style={{marginLeft: 8}} {...props}>
-      {theme.dark ? <ArtsyLogoLight /> : <ArtsyLogoDark />}
-    </View>
-  );
-}
-
-function ToggleThemeButton(props) {
-  const theme = useTheme();
-  const icon = theme.dark ? 'weather-sunny' : 'weather-night';
-
-  function onPress() {
-    isDarkTheme(!isDarkTheme());
-  }
-
-  return <IconButton icon={icon} onPress={onPress} {...props} />;
-}
 
 export default function Navigations() {
   return (
     <>
       <StatusBar backgroundColor="black" />
-      <Stack.Navigator
-        initialRouteName="Artists"
-        screenOptions={{
-          headerRight: props => <ToggleThemeButton {...props} />,
-        }}>
+      <Stack.Navigator initialRouteName="Artists">
         <Stack.Screen
           name="Artists"
           options={{
             headerLeft: props => <ArtsyLogoComponent {...props} />,
+            headerRight: props => <ToggleThemeButton {...props} />,
             title: 'Artsy',
           }}
           component={ArtistListScreen}

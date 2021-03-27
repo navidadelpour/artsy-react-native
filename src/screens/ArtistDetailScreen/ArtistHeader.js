@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function ArtistHeader({name, nationality, birthday, location}) {
+function ArtistHeader({name, nationality, birthday, location}) {
   const theme = useTheme();
   return (
     <View style={[styles.wrapper, {backgroundColor: theme.colors.surface}]}>
@@ -36,3 +36,5 @@ export default function ArtistHeader({name, nationality, birthday, location}) {
     </View>
   );
 }
+
+export default memo(ArtistHeader);

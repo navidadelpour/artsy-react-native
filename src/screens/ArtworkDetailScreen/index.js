@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {ScrollView, StyleSheet} from 'react-native';
 import {Avatar, Caption, Card} from 'react-native-paper';
@@ -47,16 +47,17 @@ export default function ArtworkDetailScreen() {
   function onARButtonPress() {
     navigation.navigate('ArtworkAR', {artwork});
   }
+  
+  const cardTitleLeft = useCallback(
+    props => <Avatar.Image {...props} source={{uri: artistUrl}} />,
+    [artistUrl]
+  );
 
   return (
     <ScrollView>
       <ArtworkImage url={url} />
       <Caption style={styles.imageCaption}>{formattedMetadata}</Caption>
-      <Card.Title
-        title={name}
-        subtitle={`${nationality}, b ${birthday}`}
-        left={props => <Avatar.Image {...props} source={{uri: artistUrl}} />}
-      />
+      <Card.Title title={name} subtitle={`${nationality}, b ${birthday}`} left={cardTitleLeft} />
       <ArtworkInformation artwork={artwork} />
       <Button mode="contained" style={styles.button} onPress={onARButtonPress}>
         View in Augmented Reality

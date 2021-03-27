@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo, useCallback, useMemo} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
 import {Card, Caption, Subheading, Paragraph} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
@@ -49,9 +49,11 @@ function ArtistCard({item}) {
     navigation.navigate('Artist', {id, artistName: name});
   }
 
+  const imageSource = useMemo(() => ({uri: image.url}), [image]);
+
   return (
     <Card style={styles.card} onPress={onPress}>
-      <Card.Cover source={{uri: image.url}} />
+      <Card.Cover source={imageSource} />
       <Card.Content style={styles.cardContent}>
         <Subheading style={styles.listTitle}>{name}</Subheading>
         <Caption>
@@ -64,6 +66,8 @@ function ArtistCard({item}) {
   );
 }
 
+const ArtistCardMemoized = memo(ArtistCard);
+
 export default function ArtistsList({query, variables, dataKey, subheading}) {
   const {data, loading, error} = useMockedQuery(query, {variables});
   const artists =
@@ -72,6 +76,8 @@ export default function ArtistsList({query, variables, dataKey, subheading}) {
     data[dataKey].artists &&
     data[dataKey].artists.length > 0 &&
     data[dataKey].artists;
+
+  const renderItem = useCallback(props => <ArtistCardMemoized {...props} />, []);
 
   return (
     <View style={styles.wrapper}>
@@ -91,11 +97,12 @@ export default function ArtistsList({query, variables, dataKey, subheading}) {
       )}
       {artists && (
         <FlatList
+          maxToRenderPerBatch={4}
           horizontal
           contentContainerStyle={styles.contentContainerStyle}
           style={styles.list}
           data={artists}
-          renderItem={props => <ArtistCard {...props} />}
+          renderItem={renderItem}
         />
       )}
     </View>

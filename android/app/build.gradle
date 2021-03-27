@@ -86,6 +86,7 @@ def getVersionFromNpm() {
 
 project.ext.react = [
     enableHermes: true,  // clean and rebuild if changing
+    bundleInDebug: true,
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"

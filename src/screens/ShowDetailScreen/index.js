@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React, {useCallback} from 'react';
 import {useRoute} from '@react-navigation/native';
 import {Image, ScrollView, StyleSheet, View} from 'react-native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
@@ -42,16 +42,25 @@ export default function ShowDetailScreen() {
   const {show} = data;
   const {press_release, cover_image: image, images} = show;
 
-  function _ShowPressRelease(props) {
-    return <ShowPressRelease press_release={press_release} {...props} />;
-  }
+  const _ShowPressRelease = useCallback(
+    props => {
+      return <ShowPressRelease press_release={press_release} {...props} />;
+    },
+    [press_release]
+  );
 
-  function _ShowInformation(props) {
-    return <ShowInformation show={show} {...props} />;
-  }
-  function _ShowImages(props) {
-    return <ShowImages images={images} {...props} />;
-  }
+  const _ShowInformation = useCallback(
+    props => {
+      return <ShowInformation show={show} {...props} />;
+    },
+    [show]
+  );
+  const _ShowImages = useCallback(
+    props => {
+      return <ShowImages images={images} {...props} />;
+    },
+    [images]
+  );
 
   return (
     <>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {useRoute} from '@react-navigation/native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
@@ -24,17 +24,26 @@ export default function ArtistDetailScreen() {
 
   const {name, nationality, birthday, location, biography, artworks, shows} = data && data.artist;
 
-  function _ArtistBiography(props) {
-    return <ArtistBiography biography={biography} {...props} />;
-  }
+  const _ArtistBiography = useCallback(
+    props => {
+      return <ArtistBiography biography={biography} {...props} />;
+    },
+    [biography]
+  );
 
-  function _ArtistArtworks(props) {
-    return <ArtistArtworks artworks={artworks} {...props} />;
-  }
+  const _ArtistArtworks = useCallback(
+    props => {
+      return <ArtistArtworks artworks={artworks} {...props} />;
+    },
+    [artworks]
+  );
 
-  function _ArtistShows(props) {
-    return <ArtistShows shows={shows} {...props} />;
-  }
+  const _ArtistShows = useCallback(
+    props => {
+      return <ArtistShows shows={shows} {...props} />;
+    },
+    [shows]
+  );
 
   return (
     <>
