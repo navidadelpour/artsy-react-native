@@ -47,7 +47,9 @@ export default function ShowInformation({show}) {
   }
 
   return (
-    <ScrollView contentContainerStyle={styles.contentContainerStyle}>
+    <ScrollView
+      contentContainerStyle={styles.contentContainerStyle}
+      showsVerticalScrollIndicator={false}>
       <View style={styles.wrapper}>
         <View>
           {name ? <Title>{name}</Title> : null}

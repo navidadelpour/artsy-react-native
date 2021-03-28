@@ -54,7 +54,7 @@ export default function ArtworkDetailScreen() {
   );
 
   return (
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <ArtworkImage url={url} />
       <Caption style={styles.imageCaption}>{formattedMetadata}</Caption>
       <Card.Title title={name} subtitle={`${nationality}, b ${birthday}`} left={cardTitleLeft} />

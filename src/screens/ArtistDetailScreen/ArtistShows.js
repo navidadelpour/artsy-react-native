@@ -31,6 +31,7 @@ export default function ArtistShows({shows}) {
 
   return (
     <FlatList
+      showsVerticalScrollIndicator={false}
       contentContainerStyle={styles.list}
       data={shows}
       renderItem={props => <ArtistShow {...props} />}

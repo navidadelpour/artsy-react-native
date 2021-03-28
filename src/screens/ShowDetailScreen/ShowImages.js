@@ -41,6 +41,7 @@ export default function ShowImages({images}) {
   return (
     <>
       <FlatList
+        showsVerticalScrollIndicator={false}
         numColumns={3}
         contentContainerStyle={styles.list}
         data={images}

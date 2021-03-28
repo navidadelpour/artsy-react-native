@@ -28,6 +28,7 @@ export default function ArtistArtworks({artworks}) {
 
   return (
     <FlatList
+      showsVerticalScrollIndicator={false}
       data={artworks}
       contentContainerStyle={styles.list}
       renderItem={props => <ArtistArtwork {...props} />}

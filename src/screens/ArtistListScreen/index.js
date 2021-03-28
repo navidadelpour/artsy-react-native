@@ -8,7 +8,7 @@ import {POPULAR_ARTISTS, TRENDING_ARTISTS} from '../../graphql/artists';
 export default function ArtistListScreen() {
   return (
     <SafeAreaView>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <HomeHeader />
         <ArtistsList
           query={POPULAR_ARTISTS}

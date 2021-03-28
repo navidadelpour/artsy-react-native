@@ -86,7 +86,7 @@ function ShowPressRelease({press_release}) {
   }
 
   return (
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.pressReleaseWrapper}>
         <Title>Press Release</Title>
         <Paragraph>{press_release}</Paragraph>

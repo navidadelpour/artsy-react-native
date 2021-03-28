@@ -97,6 +97,7 @@ export default function ArtistsList({query, variables, dataKey, subheading}) {
       )}
       {artists && (
         <FlatList
+          showsHorizontalScrollIndicator={false}
           maxToRenderPerBatch={4}
           horizontal
           contentContainerStyle={styles.contentContainerStyle}

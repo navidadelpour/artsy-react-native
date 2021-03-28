@@ -52,7 +52,7 @@ export default function ArtistBiography({biography}) {
   }
 
   return (
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <Card style={styles.card}>
         <Card.Cover source={{uri: url}} />
         <Card.Content>
