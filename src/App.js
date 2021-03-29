@@ -15,10 +15,10 @@ import {
 import {ApolloProvider, gql, useQuery} from '@apollo/client';
 
 import {View} from 'react-native';
-import client from './src/apollo/client';
-import Navigations from './src/Navigations';
-import {isDarkTheme} from './src/apollo/cache';
-import Loader from './src/components/Loader';
+import client from './apollo/client';
+import Navigations from './Navigations';
+import {isDarkTheme} from './apollo/cache';
+import Loader from './components/Loader';
 
 const defaultTheme = {
   ...PaperDefaultTheme,
