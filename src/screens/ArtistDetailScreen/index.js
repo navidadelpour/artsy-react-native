@@ -3,13 +3,13 @@ import {useRoute} from '@react-navigation/native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
 import {useTheme} from 'react-native-paper';
-import BasicIconMessage from '../../components/BasicIconMessage';
-import {ARTIST} from '../../graphql/artists';
+import BasicIconMessage from 'components/BasicIconMessage';
+import Loader from 'components/Loader';
+import useMockedQuery from 'hooks/useMockedQuery';
+import {ARTIST} from 'graphql/artists';
 import ArtistBiography from './ArtistBiography';
 import ArtistHeader from './ArtistHeader';
 import ArtistArtworks from './ArtistArtworks';
-import Loader from '../../components/Loader';
-import useMockedQuery from '../../hooks/useMockedQuery';
 import ArtistShows from './ArtistShows';
 
 const ArtistTab = createMaterialTopTabNavigator();

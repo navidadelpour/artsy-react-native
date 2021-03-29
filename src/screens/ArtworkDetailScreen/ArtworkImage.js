@@ -1,8 +1,9 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {Image, Modal, StyleSheet, View} from 'react-native';
 import ImageViewer from 'react-native-image-zoom-viewer';
-import useBoolean from '../../hooks/useBoolean';
-import BackgroundIconButton from '../../components/BackgroundIconButton';
+
+import useBoolean from 'hooks/useBoolean';
+import BackgroundIconButton from 'components/BackgroundIconButton';
 
 const styles = StyleSheet.create({
   image: {

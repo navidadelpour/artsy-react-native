@@ -1,12 +1,13 @@
 import React, {useCallback} from 'react';
-import {useNavigation, useRoute} from '@react-navigation/native';
 import {ScrollView, StyleSheet} from 'react-native';
 import {Avatar, Caption, Card} from 'react-native-paper';
-import BasicIconMessage from '../../components/BasicIconMessage';
-import Button from '../../components/Button';
-import Loader from '../../components/Loader';
-import {ARTWORK} from '../../graphql/artwork';
-import useMockedQuery from '../../hooks/useMockedQuery';
+import {useNavigation, useRoute} from '@react-navigation/native';
+
+import {ARTWORK} from 'graphql/artwork';
+import useMockedQuery from 'hooks/useMockedQuery';
+import BasicIconMessage from 'components/BasicIconMessage';
+import Loader from 'components/Loader';
+import Button from 'components/Button';
 import ArtworkImage from './ArtworkImage';
 import ArtworkInformation from './ArtworkInformation';
 
@@ -54,7 +55,7 @@ function ArtworkDetailResult({artwork}) {
   function onARButtonPress() {
     navigation.navigate('ArtworkAR', {artwork});
   }
-  
+
   const cardTitleLeft = useCallback(
     props => <Avatar.Image {...props} source={{uri: artistUrl}} />,
     [artistUrl],

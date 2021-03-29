@@ -1,8 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-
 import {Text, Colors} from 'react-native-paper';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const styles = StyleSheet.create({
   wrapper: {justifyContent: 'center', alignItems: 'center', flexGrow: 1},

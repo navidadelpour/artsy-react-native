@@ -1,14 +1,15 @@
 import React from 'react';
+import {StatusBar} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {StatusBar} from 'react-native';
-import ArtistListScreen from './screens/ArtistListScreen';
-import ArtistDetailScreen from './screens/ArtistDetailScreen';
-import WebviewScreen from './screens/WebviewScreen';
-import ArtworkDetailScreen from './screens/ArtworkDetailScreen';
-import ShowDetailScreen from './screens/ShowDetailScreen';
-import ArtsyLogoComponent from './components/ArtsyLogoComponent';
-import ToggleThemeButton from './components/ToggleThemeButton';
+import ArtistListScreen from 'screens/ArtistListScreen';
+import ArtistDetailScreen from 'screens/ArtistDetailScreen';
+import WebviewScreen from 'screens/WebviewScreen';
+import ArtworkDetailScreen from 'screens/ArtworkDetailScreen';
+import ShowDetailScreen from 'screens/ShowDetailScreen';
+
+import ArtsyLogoComponent from 'components/ArtsyLogoComponent';
+import ToggleThemeButton from 'components/ToggleThemeButton';
 
 const Stack = createStackNavigator();
 

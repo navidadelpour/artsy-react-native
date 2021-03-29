@@ -1,5 +1,4 @@
 import React, {Fragment} from 'react';
-import {useNavigation} from '@react-navigation/native';
 import {ScrollView, StyleSheet, View} from 'react-native';
 import {
   Caption,
@@ -9,7 +8,9 @@ import {
   Title,
   useTheme,
 } from 'react-native-paper';
-import Button from '../../components/Button';
+import {useNavigation} from '@react-navigation/native';
+
+import Button from 'components/Button';
 
 const styles = StyleSheet.create({
   contentContainerStyle: {

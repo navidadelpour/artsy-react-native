@@ -1,11 +1,11 @@
 import React from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
+import {Caption, Card, Paragraph, Subheading, Title} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 import Moment from 'react-moment';
 
-import {Caption, Card, Paragraph, Subheading, Title} from 'react-native-paper';
-import Button from '../../components/Button';
-import BasicIconMessage from '../../components/BasicIconMessage';
+import Button from 'components/Button';
+import BasicIconMessage from 'components/BasicIconMessage';
 
 const styles = StyleSheet.create({
   card: {

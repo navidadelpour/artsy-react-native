@@ -1,7 +1,7 @@
 import React, {memo, useCallback} from 'react';
-
 import {IconButton, useTheme} from 'react-native-paper';
-import {isDarkTheme} from '../apollo/cache';
+
+import {isDarkTheme} from 'apollo/cache';
 
 function ToggleThemeButton(props) {
   const theme = useTheme();

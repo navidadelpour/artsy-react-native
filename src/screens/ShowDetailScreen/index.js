@@ -1,12 +1,13 @@
 import React, {useCallback} from 'react';
-import {useRoute} from '@react-navigation/native';
 import {Image, ScrollView, StyleSheet, View} from 'react-native';
-import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {Paragraph, Title, useTheme} from 'react-native-paper';
-import BasicIconMessage from '../../components/BasicIconMessage';
-import Loader from '../../components/Loader';
-import {SHOW} from '../../graphql/show';
-import useMockedQuery from '../../hooks/useMockedQuery';
+import {useRoute} from '@react-navigation/native';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+
+import {SHOW} from 'graphql/show';
+import useMockedQuery from 'hooks/useMockedQuery';
+import BasicIconMessage from 'components/BasicIconMessage';
+import Loader from 'components/Loader';
 import ShowImages from './ShowImages';
 import ShowInformation from './ShowInformation';
 

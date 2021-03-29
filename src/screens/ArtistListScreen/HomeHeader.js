@@ -2,7 +2,7 @@ import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Card, Headline, Subheading} from 'react-native-paper';
 
-import HomeHeaderImage from '../../assets/images/home-header.jpeg';
+import HomeHeaderImage from 'assets/images/home-header.jpeg';
 
 const styles = StyleSheet.create({
   overlay: {

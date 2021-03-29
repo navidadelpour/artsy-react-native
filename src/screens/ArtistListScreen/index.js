@@ -1,9 +1,9 @@
 import React from 'react';
 import {SafeAreaView, ScrollView} from 'react-native';
-import ArtistsList from './ArtistsList';
-import HomeHeader from './HomeHeader';
 
-import {POPULAR_ARTISTS, TRENDING_ARTISTS} from '../../graphql/artists';
+import {POPULAR_ARTISTS, TRENDING_ARTISTS} from 'graphql/artists';
+import HomeHeader from './HomeHeader';
+import ArtistsList from './ArtistsList';
 
 export default function ArtistListScreen() {
   return (

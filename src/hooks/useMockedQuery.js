@@ -1,10 +1,10 @@
 import {useQuery} from '@apollo/client';
 
-import artistMock from '../mocks/artistMock';
-import artworkMock from '../mocks/artworkMock';
-import showMock from '../mocks/showMock';
-import popularArtistsMock from '../mocks/popularArtistsMock';
-import trendingArtistsMock from '../mocks/trendingArtistsMock';
+import artistMock from 'mocks/artistMock';
+import artworkMock from 'mocks/artworkMock';
+import showMock from 'mocks/showMock';
+import popularArtistsMock from 'mocks/popularArtistsMock';
+import trendingArtistsMock from 'mocks/trendingArtistsMock';
 
 // eslint-disable-next-line no-undef
 const SHOULD_MOCK = __DEV__;

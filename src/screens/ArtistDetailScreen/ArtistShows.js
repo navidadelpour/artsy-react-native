@@ -1,9 +1,9 @@
 import React from 'react';
-import {useNavigation} from '@react-navigation/native';
 import {FlatList, StyleSheet, View} from 'react-native';
 import {Caption, Card, Subheading} from 'react-native-paper';
+import {useNavigation} from '@react-navigation/native';
 
-import BasicIconMessage from '../../components/BasicIconMessage';
+import BasicIconMessage from 'components/BasicIconMessage';
 
 const styles = StyleSheet.create({
   card: {

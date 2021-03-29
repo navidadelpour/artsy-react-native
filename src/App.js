@@ -1,24 +1,23 @@
 import 'react-native-gesture-handler';
-
 import React, {useEffect} from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import {
-  NavigationContainer,
-  DarkTheme as NavigationDarkTheme,
-  DefaultTheme as NavigationDefaultTheme,
-} from '@react-navigation/native';
+import {View} from 'react-native';
 import {
   Provider as PaperProvider,
   DarkTheme as PaperDarkTheme,
   DefaultTheme as PaperDefaultTheme,
 } from 'react-native-paper';
+import {
+  NavigationContainer,
+  DarkTheme as NavigationDarkTheme,
+  DefaultTheme as NavigationDefaultTheme,
+} from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {ApolloProvider, gql, useQuery} from '@apollo/client';
 
-import {View} from 'react-native';
-import client from './apollo/client';
+import client from 'apollo/client';
+import {isDarkTheme} from 'apollo/cache';
+import Loader from 'components/Loader';
 import Navigations from './Navigations';
-import {isDarkTheme} from './apollo/cache';
-import Loader from './components/Loader';
 
 const defaultTheme = {
   ...PaperDefaultTheme,

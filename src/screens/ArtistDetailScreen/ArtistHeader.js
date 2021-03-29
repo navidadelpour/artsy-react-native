@@ -1,8 +1,7 @@
 import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-
 import {Caption, Paragraph, Subheading, useTheme} from 'react-native-paper';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const styles = StyleSheet.create({
   wrapper: {

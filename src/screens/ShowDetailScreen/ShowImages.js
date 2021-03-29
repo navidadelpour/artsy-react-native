@@ -2,8 +2,9 @@ import React, {useState} from 'react';
 import {Image, View, Modal, StyleSheet} from 'react-native';
 import {FlatList, TouchableHighlight} from 'react-native-gesture-handler';
 import ImageViewer from 'react-native-image-zoom-viewer';
-import BackgroundIconButton from '../../components/BackgroundIconButton';
-import BasicIconMessage from '../../components/BasicIconMessage';
+
+import BackgroundIconButton from 'components/BackgroundIconButton';
+import BasicIconMessage from 'components/BasicIconMessage';
 
 const styles = StyleSheet.create({
   list: {

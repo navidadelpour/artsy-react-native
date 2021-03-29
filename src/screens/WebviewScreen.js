@@ -1,7 +1,8 @@
 import React from 'react';
 import {useRoute} from '@react-navigation/native';
 import WebView from 'react-native-webview';
-import Loader from '../components/Loader';
+
+import Loader from 'components/Loader';
 
 export default function WebviewScreen() {
   const {params} = useRoute();
