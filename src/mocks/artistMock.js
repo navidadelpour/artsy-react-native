@@ -7,7 +7,8 @@ export default {
       birthday: '1928',
       location: 'New York, United States',
       image: {
-        url: 'https://d32dm0rphc51dk.cloudfront.net/E-k-uLoQADM8AjadsSKHrA/tall.jpg',
+        url:
+          'https://d32dm0rphc51dk.cloudfront.net/E-k-uLoQADM8AjadsSKHrA/tall.jpg',
       },
       biography: {
         id: '550c9c59a858d706002c6374',
@@ -20,7 +21,8 @@ export default {
           '“If you want to know all about Andy Warhol just look at the surface: of my paintings and films and me, and there I am. There’s nothing behind it.”                                           —Andy Warhol',
         published_at: '2015-03-20T22:40:41.011Z',
         thumbnail_image: {
-          url: 'https://artsy-media-uploads.s3.amazonaws.com/KSnv-xGYtkhk5g3B4u2hKg%2Flarge-1.jpg',
+          url:
+            'https://artsy-media-uploads.s3.amazonaws.com/KSnv-xGYtkhk5g3B4u2hKg%2Flarge-1.jpg',
         },
       },
       artworks: [
@@ -31,7 +33,8 @@ export default {
           is_sold: false,
           price: '',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/aSs_exvJVlGOLq-8t49iSQ/medium.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/aSs_exvJVlGOLq-8t49iSQ/medium.jpg',
           },
         },
         {
@@ -41,7 +44,8 @@ export default {
           is_sold: false,
           price: '',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/ltFQnOQ6mNUViMtkIdOXbQ/larger.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/ltFQnOQ6mNUViMtkIdOXbQ/larger.jpg',
           },
         },
         {
@@ -51,7 +55,8 @@ export default {
           is_sold: false,
           price: '',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/_S-uq_IKghKonxhpsjX42A/larger.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/_S-uq_IKghKonxhpsjX42A/larger.jpg',
           },
         },
         {
@@ -61,7 +66,8 @@ export default {
           is_sold: false,
           price: '',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/3qL8BoiPEpJ61Z7bpmH-Cg/medium.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/3qL8BoiPEpJ61Z7bpmH-Cg/medium.jpg',
           },
         },
         {
@@ -71,7 +77,8 @@ export default {
           is_sold: true,
           price: '$500',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/SFBN1GCSi_DewNk8lIAS9w/medium.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/SFBN1GCSi_DewNk8lIAS9w/medium.jpg',
           },
         },
         {
@@ -81,7 +88,8 @@ export default {
           is_sold: false,
           price: '$2,650',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/b3nN0Y0pvZXGE7DnktZttA/medium.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/b3nN0Y0pvZXGE7DnktZttA/medium.jpg',
           },
         },
         {
@@ -91,7 +99,8 @@ export default {
           is_sold: false,
           price: '',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/BzqRIymRXdCjyeLkhrn5ww/tall.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/BzqRIymRXdCjyeLkhrn5ww/tall.jpg',
           },
         },
         {
@@ -101,7 +110,8 @@ export default {
           is_sold: false,
           price: '',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/XCMtnqZer3mlTrd20fcs-Q/tall.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/XCMtnqZer3mlTrd20fcs-Q/tall.jpg',
           },
         },
         {
@@ -111,7 +121,8 @@ export default {
           is_sold: false,
           price: '$950',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/In-CUp7awBElqVcIA3kW7Q/square.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/In-CUp7awBElqVcIA3kW7Q/square.jpg',
           },
         },
         {
@@ -121,7 +132,8 @@ export default {
           is_sold: false,
           price: '',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/iAUTdeZjDShoGHdYKkQvIg/tall.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/iAUTdeZjDShoGHdYKkQvIg/tall.jpg',
           },
         },
       ],
@@ -133,7 +145,8 @@ export default {
           city: 'Seoul ',
           status: 'running',
           cover_image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/vlXf0LFyHT9wTe7ODTMuJg/larger.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/vlXf0LFyHT9wTe7ODTMuJg/larger.jpg',
           },
         },
         {
@@ -143,7 +156,8 @@ export default {
           city: null,
           status: 'running',
           cover_image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/fxRvNVF9uAlhaW2bgCzm8A/medium.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/fxRvNVF9uAlhaW2bgCzm8A/medium.jpg',
           },
         },
         {
@@ -153,7 +167,8 @@ export default {
           city: null,
           status: 'running',
           cover_image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/2BkdUCL6BXLwwOijixKooA/medium.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/2BkdUCL6BXLwwOijixKooA/medium.jpg',
           },
         },
         {
@@ -163,7 +178,8 @@ export default {
           city: 'Düsseldorf',
           status: 'running',
           cover_image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/jHEsersYFhkj7kWAIxTsDQ/featured.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/jHEsersYFhkj7kWAIxTsDQ/featured.jpg',
           },
         },
         {
@@ -173,7 +189,8 @@ export default {
           city: null,
           status: 'running',
           cover_image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/AVKh7wMqEsIWmZxN7TZdig/medium.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/AVKh7wMqEsIWmZxN7TZdig/medium.jpg',
           },
         },
         {
@@ -183,18 +200,21 @@ export default {
           city: null,
           status: 'running',
           cover_image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/jv9q7nWKrS-7XUCHxpWKWw/larger.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/jv9q7nWKrS-7XUCHxpWKWw/larger.jpg',
           },
         },
         {
           id:
             'alpha-137-gallery-abstract-expressionist-works-editions-works-on-paper-and-paintings',
-          name: 'Abstract Expressionist Works: Editions, Works on Paper and Paintings',
+          name:
+            'Abstract Expressionist Works: Editions, Works on Paper and Paintings',
           exhibition_period: 'Mar 20 – Jun 28',
           city: null,
           status: 'running',
           cover_image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/u4vl6S3smsAUU6AYCWRGGw/medium.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/u4vl6S3smsAUU6AYCWRGGw/medium.jpg',
           },
         },
         {
@@ -204,7 +224,8 @@ export default {
           city: null,
           status: 'running',
           cover_image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/GyOgm6GuYIxCpCyUlwWHlg/medium.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/GyOgm6GuYIxCpCyUlwWHlg/medium.jpg',
           },
         },
         {
@@ -214,7 +235,8 @@ export default {
           city: null,
           status: 'running',
           cover_image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/eZQyScrvoItd08MwYj9JeQ/medium.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/eZQyScrvoItd08MwYj9JeQ/medium.jpg',
           },
         },
         {
@@ -224,7 +246,8 @@ export default {
           city: null,
           status: 'running',
           cover_image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/m-riRijTXlfqqrBUkM4P-g/medium.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/m-riRijTXlfqqrBUkM4P-g/medium.jpg',
           },
         },
       ],

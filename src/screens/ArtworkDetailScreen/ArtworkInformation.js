@@ -1,6 +1,13 @@
 import React, {Fragment} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Colors, Divider, Headline, List, Paragraph, useTheme} from 'react-native-paper';
+import {
+  Colors,
+  Divider,
+  Headline,
+  List,
+  Paragraph,
+  useTheme,
+} from 'react-native-paper';
 
 const styles = StyleSheet.create({
   informationWrapper: {

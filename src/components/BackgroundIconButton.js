@@ -12,7 +12,11 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function BackgroundIconButton({style, backgroundColor = 'rgba(0,0,0,.5)', ...rest}) {
+export default function BackgroundIconButton({
+  style,
+  backgroundColor = 'rgba(0,0,0,.5)',
+  ...rest
+}) {
   return (
     <View
       style={{

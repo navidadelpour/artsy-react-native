@@ -77,7 +77,10 @@ export default function ArtistsList({query, variables, dataKey, subheading}) {
     data[dataKey].artists.length > 0 &&
     data[dataKey].artists;
 
-  const renderItem = useCallback(props => <ArtistCardMemoized {...props} />, []);
+  const renderItem = useCallback(
+    props => <ArtistCardMemoized {...props} />,
+    [],
+  );
 
   return (
     <View style={styles.wrapper}>

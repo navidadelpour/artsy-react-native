@@ -35,7 +35,9 @@ export default function ShowImages({images}) {
   }
 
   if (!images || images.length === 0) {
-    return <BasicIconMessage message="No images available" icon="error-outline" />;
+    return (
+      <BasicIconMessage message="No images available" icon="error-outline" />
+    );
   }
 
   return (
@@ -46,7 +48,9 @@ export default function ShowImages({images}) {
         contentContainerStyle={styles.list}
         data={images}
         keyExtractor={item => item.url}
-        renderItem={props => <ImageCard setImageModalIndex={setImageModalIndex} {...props} />}
+        renderItem={props => (
+          <ImageCard setImageModalIndex={setImageModalIndex} {...props} />
+        )}
       />
       <Modal visible={modalOpen} transparent>
         <ImageViewer
@@ -54,7 +58,9 @@ export default function ShowImages({images}) {
           index={imageModalIndex}
           onCancel={closeModal}
           imageUrls={images.map(({url}) => ({url}))}
-          renderFooter={() => <BackgroundIconButton icon="close" onPress={closeModal} />}
+          renderFooter={() => (
+            <BackgroundIconButton icon="close" onPress={closeModal} />
+          )}
         />
       </Modal>
     </>

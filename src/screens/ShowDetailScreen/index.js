@@ -32,7 +32,9 @@ export default function ShowDetailScreen() {
   });
 
   if (error) {
-    return <BasicIconMessage error icon="warning" message="Unknown error happend" />;
+    return (
+      <BasicIconMessage error icon="warning" message="Unknown error happend" />
+    );
   }
 
   if (loading) {
@@ -46,20 +48,20 @@ export default function ShowDetailScreen() {
     props => {
       return <ShowPressRelease press_release={press_release} {...props} />;
     },
-    [press_release]
+    [press_release],
   );
 
   const _ShowInformation = useCallback(
     props => {
       return <ShowInformation show={show} {...props} />;
     },
-    [show]
+    [show],
   );
   const _ShowImages = useCallback(
     props => {
       return <ShowImages images={images} {...props} />;
     },
-    [images]
+    [images],
   );
 
   return (
@@ -82,7 +84,12 @@ export default function ShowDetailScreen() {
 
 function ShowPressRelease({press_release}) {
   if (!press_release) {
-    return <BasicIconMessage message="No press release available" icon="error-outline" />;
+    return (
+      <BasicIconMessage
+        message="No press release available"
+        icon="error-outline"
+      />
+    );
   }
 
   return (

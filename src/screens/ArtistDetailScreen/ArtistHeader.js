@@ -21,7 +21,9 @@ function ArtistHeader({name, nationality, birthday, location}) {
   const theme = useTheme();
   return (
     <View style={[styles.wrapper, {backgroundColor: theme.colors.surface}]}>
-      <Subheading style={[styles.subheading, styles.noVerticalMargin]}>{name}</Subheading>
+      <Subheading style={[styles.subheading, styles.noVerticalMargin]}>
+        {name}
+      </Subheading>
       <Paragraph style={styles.noVerticalMargin}>
         {nationality}
         {nationality && birthday && ', '}

@@ -48,7 +48,11 @@ export default function Navigations() {
             title: route?.params?.showName,
           })}
         />
-        <Stack.Screen name="Webview" component={WebviewScreen} options={{headerShown: false}} />
+        <Stack.Screen
+          name="Webview"
+          component={WebviewScreen}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </>
   );

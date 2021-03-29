@@ -17,23 +17,29 @@ export default {
         artworks: 15,
       },
       cover_image: {
-        url: 'https://d32dm0rphc51dk.cloudfront.net/vlXf0LFyHT9wTe7ODTMuJg/larger.jpg',
+        url:
+          'https://d32dm0rphc51dk.cloudfront.net/vlXf0LFyHT9wTe7ODTMuJg/larger.jpg',
       },
       images: [
         {
-          url: 'https://d32dm0rphc51dk.cloudfront.net/vlXf0LFyHT9wTe7ODTMuJg/larger.jpg',
+          url:
+            'https://d32dm0rphc51dk.cloudfront.net/vlXf0LFyHT9wTe7ODTMuJg/larger.jpg',
         },
         {
-          url: 'https://d32dm0rphc51dk.cloudfront.net/vWq6mRB9uyvfhA1JT1xH_A/larger.jpg',
+          url:
+            'https://d32dm0rphc51dk.cloudfront.net/vWq6mRB9uyvfhA1JT1xH_A/larger.jpg',
         },
         {
-          url: 'https://d32dm0rphc51dk.cloudfront.net/qyaUCOGoMRkOmQ4nCxSF9g/larger.jpg',
+          url:
+            'https://d32dm0rphc51dk.cloudfront.net/qyaUCOGoMRkOmQ4nCxSF9g/larger.jpg',
         },
         {
-          url: 'https://d32dm0rphc51dk.cloudfront.net/FFttvWX52yXnL4FHjarKmg/larger.jpg',
+          url:
+            'https://d32dm0rphc51dk.cloudfront.net/FFttvWX52yXnL4FHjarKmg/larger.jpg',
         },
         {
-          url: 'https://d32dm0rphc51dk.cloudfront.net/VmNArvSZmrBl8wddUTAlqQ/larger.jpg',
+          url:
+            'https://d32dm0rphc51dk.cloudfront.net/VmNArvSZmrBl8wddUTAlqQ/larger.jpg',
         },
       ],
     },

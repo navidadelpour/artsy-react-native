@@ -8,7 +8,8 @@ export default {
           nationality: 'American',
           birthday: '1955',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/191ChV3huFBn3v0_F8K3UA/tall.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/191ChV3huFBn3v0_F8K3UA/tall.jpg',
           },
         },
         {
@@ -17,7 +18,8 @@ export default {
           nationality: 'British-Indian',
           birthday: '1954',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/aJFSJ1oyoV7jsnDdtx_tsw/tall.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/aJFSJ1oyoV7jsnDdtx_tsw/tall.jpg',
           },
         },
         {
@@ -26,7 +28,8 @@ export default {
           nationality: 'Japanese',
           birthday: '1929',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/k4jwHwwpU_4Ayulhp8p6qw/tall.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/k4jwHwwpU_4Ayulhp8p6qw/tall.jpg',
           },
         },
         {
@@ -35,7 +38,8 @@ export default {
           nationality: 'American',
           birthday: '1954',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/aTPEdbzj3QjETbt6KgnetA/tall.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/aTPEdbzj3QjETbt6KgnetA/tall.jpg',
           },
         },
         {
@@ -44,7 +48,8 @@ export default {
           nationality: 'American',
           birthday: '1969',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/9sR8qS4msvEng8GO62YWcw/tall.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/9sR8qS4msvEng8GO62YWcw/tall.jpg',
           },
         },
         {
@@ -53,7 +58,8 @@ export default {
           nationality: 'American',
           birthday: '1959',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/SKBZe2ioqtXTAlFy24Lutw/tall.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/SKBZe2ioqtXTAlFy24Lutw/tall.jpg',
           },
         },
         {
@@ -62,7 +68,8 @@ export default {
           nationality: 'American',
           birthday: '1943',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/DZsAAy1kFEnbtn8YU4l8pw/tall.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/DZsAAy1kFEnbtn8YU4l8pw/tall.jpg',
           },
         },
         {
@@ -71,7 +78,8 @@ export default {
           nationality: 'South African',
           birthday: '1972',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/RHcw0zXqIjZLqF2wr1Lr8Q/tall.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/RHcw0zXqIjZLqF2wr1Lr8Q/tall.jpg',
           },
         },
         {
@@ -80,7 +88,8 @@ export default {
           nationality: 'Egyptian',
           birthday: '1963',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/4p1CuvXGJobigjQhYi_Neg/tall.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/4p1CuvXGJobigjQhYi_Neg/tall.jpg',
           },
         },
         {
@@ -89,7 +98,8 @@ export default {
           nationality: 'American',
           birthday: '1965',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/3JXet7eq0JF3S-wtc9aumA/tall.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/3JXet7eq0JF3S-wtc9aumA/tall.jpg',
           },
         },
         {
@@ -98,7 +108,8 @@ export default {
           nationality: 'South Korean',
           birthday: '1962',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/Brw10Pw2RBFfc1Z5slSqvg/tall.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/Brw10Pw2RBFfc1Z5slSqvg/tall.jpg',
           },
         },
         {
@@ -107,7 +118,8 @@ export default {
           nationality: 'Irish',
           birthday: '1980',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/WCOHnrRduDGcbaymKsbREw/square.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/WCOHnrRduDGcbaymKsbREw/square.jpg',
           },
         },
         {
@@ -116,7 +128,8 @@ export default {
           nationality: 'American',
           birthday: '1926',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/fK9szb5oIfzgki7D34JbrQ/tall.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/fK9szb5oIfzgki7D34JbrQ/tall.jpg',
           },
         },
         {
@@ -125,7 +138,8 @@ export default {
           nationality: 'Israeli',
           birthday: '1985',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/spjeBUvWXKXFemVHTnG90A/tall.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/spjeBUvWXKXFemVHTnG90A/tall.jpg',
           },
         },
         {
@@ -134,7 +148,8 @@ export default {
           nationality: 'American',
           birthday: '1991 ',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/UYJlc3S8NT5V4Wt9-s4gMg/square.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/UYJlc3S8NT5V4Wt9-s4gMg/square.jpg',
           },
         },
         {
@@ -143,7 +158,8 @@ export default {
           nationality: 'Pakistani-American',
           birthday: '',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/me39OLRkBuTJIyfrLbYqgw/four_thirds.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/me39OLRkBuTJIyfrLbYqgw/four_thirds.jpg',
           },
         },
         {
@@ -152,7 +168,8 @@ export default {
           nationality: 'American',
           birthday: '1940',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/Da48zBZWfAvQ25mplEQ9jg/tall.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/Da48zBZWfAvQ25mplEQ9jg/tall.jpg',
           },
         },
         {
@@ -161,7 +178,8 @@ export default {
           nationality: 'Iraqi',
           birthday: '1981',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/i5ug8LPlp8SQ4OWkG4X-aA/tall.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/i5ug8LPlp8SQ4OWkG4X-aA/tall.jpg',
           },
         },
         {
@@ -170,7 +188,8 @@ export default {
           nationality: 'American',
           birthday: '1977',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/E1SPTgtXvjA5rX__cFfQoQ/tall.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/E1SPTgtXvjA5rX__cFfQoQ/tall.jpg',
           },
         },
         {
@@ -179,7 +198,8 @@ export default {
           nationality: 'British',
           birthday: '',
           image: {
-            url: 'https://d32dm0rphc51dk.cloudfront.net/X9vVvod7QY73ZwLDSZzljw/tall.jpg',
+            url:
+              'https://d32dm0rphc51dk.cloudfront.net/X9vVvod7QY73ZwLDSZzljw/tall.jpg',
           },
         },
       ],

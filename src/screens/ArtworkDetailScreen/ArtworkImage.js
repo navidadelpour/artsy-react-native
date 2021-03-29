@@ -32,7 +32,9 @@ export default function ArtworkImage({url}) {
           enableSwipeDown
           onCancel={setFullscreenFalse}
           imageUrls={[{url}]}
-          renderFooter={() => <BackgroundIconButton icon="close" onPress={setFullscreenFalse} />}
+          renderFooter={() => (
+            <BackgroundIconButton icon="close" onPress={setFullscreenFalse} />
+          )}
         />
       </Modal>
     </>

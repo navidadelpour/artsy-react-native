@@ -31,7 +31,9 @@ export default function ArtworkDetailScreen() {
   });
 
   if (error) {
-    return <BasicIconMessage error icon="warning" message="Unknown error happend" />;
+    return (
+      <BasicIconMessage error icon="warning" message="Unknown error happend" />
+    );
   }
 
   if (loading) {
@@ -50,14 +52,18 @@ export default function ArtworkDetailScreen() {
   
   const cardTitleLeft = useCallback(
     props => <Avatar.Image {...props} source={{uri: artistUrl}} />,
-    [artistUrl]
+    [artistUrl],
   );
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <ArtworkImage url={url} />
       <Caption style={styles.imageCaption}>{formattedMetadata}</Caption>
-      <Card.Title title={name} subtitle={`${nationality}, b ${birthday}`} left={cardTitleLeft} />
+      <Card.Title
+        title={name}
+        subtitle={`${nationality}, b ${birthday}`}
+        left={cardTitleLeft}
+      />
       <ArtworkInformation artwork={artwork} />
       <Button mode="contained" style={styles.button} onPress={onARButtonPress}>
         View in Augmented Reality

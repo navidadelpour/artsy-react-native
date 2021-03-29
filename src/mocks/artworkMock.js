@@ -7,7 +7,8 @@ export default {
         birthday: '1928',
         name: 'Andy Warhol',
         image: {
-          url: 'https://d32dm0rphc51dk.cloudfront.net/E-k-uLoQADM8AjadsSKHrA/tall.jpg',
+          url:
+            'https://d32dm0rphc51dk.cloudfront.net/E-k-uLoQADM8AjadsSKHrA/tall.jpg',
         },
       },
       formattedMetadata: 'Andy Warhol, ‘Marilyn’, 1967, Seattle Art Museum',
@@ -47,7 +48,8 @@ export default {
       is_sold: false,
       price: '23$',
       image: {
-        url: 'https://d32dm0rphc51dk.cloudfront.net/iAUTdeZjDShoGHdYKkQvIg/tall.jpg',
+        url:
+          'https://d32dm0rphc51dk.cloudfront.net/iAUTdeZjDShoGHdYKkQvIg/tall.jpg',
       },
     },
   },

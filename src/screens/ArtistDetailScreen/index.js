@@ -22,32 +22,38 @@ export default function ArtistDetailScreen() {
     return <Loader />;
   }
 
-  const {name, nationality, birthday, location, biography, artworks, shows} = data && data.artist;
+  const {name, nationality, birthday, location, biography, artworks, shows} =
+    data && data.artist;
 
   const _ArtistBiography = useCallback(
     props => {
       return <ArtistBiography biography={biography} {...props} />;
     },
-    [biography]
+    [biography],
   );
 
   const _ArtistArtworks = useCallback(
     props => {
       return <ArtistArtworks artworks={artworks} {...props} />;
     },
-    [artworks]
+    [artworks],
   );
 
   const _ArtistShows = useCallback(
     props => {
       return <ArtistShows shows={shows} {...props} />;
     },
-    [shows]
+    [shows],
   );
 
   return (
     <>
-      <ArtistHeader name={name} nationality={nationality} birthday={birthday} location={location} />
+      <ArtistHeader
+        name={name}
+        nationality={nationality}
+        birthday={birthday}
+        location={location}
+      />
       <ArtistTab.Navigator
         initialRouteName="Works"
         tabBarOptions={{

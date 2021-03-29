@@ -9,7 +9,9 @@ export default function WebviewScreen() {
     <WebView
       startInLoadingState
       renderLoading={() => (
-        <Loader style={{position: 'absolute', left: 0, right: 0, top: 0, bottom: 0}} />
+        <Loader
+          style={{position: 'absolute', left: 0, right: 0, top: 0, bottom: 0}}
+        />
       )}
       source={{uri: params.link}}
     />

@@ -1,7 +1,14 @@
 import React, {Fragment} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {ScrollView, StyleSheet, View} from 'react-native';
-import {Caption, Colors, Paragraph, Text, Title, useTheme} from 'react-native-paper';
+import {
+  Caption,
+  Colors,
+  Paragraph,
+  Text,
+  Title,
+  useTheme,
+} from 'react-native-paper';
 import Button from '../../components/Button';
 
 const styles = StyleSheet.create({
@@ -38,7 +45,16 @@ const styles = StyleSheet.create({
 export default function ShowInformation({show}) {
   const navigation = useNavigation();
 
-  const {name, city, exhibition_period, status, kind, counts, description, href} = show;
+  const {
+    name,
+    city,
+    exhibition_period,
+    status,
+    kind,
+    counts,
+    description,
+    href,
+  } = show;
   const {artists: artistsCount, artworks: artworksCount} = counts;
   const link = `https://www.artsy.net${href}`;
 
@@ -61,8 +77,14 @@ export default function ShowInformation({show}) {
             </Text>
             <ShowStatus status={status} />
           </View>
-          <ShowCaption artistsCount={artistsCount} artworksCount={artworksCount} kind={kind} />
-          {description ? <Paragraph style={styles.paragraph}>{description}</Paragraph> : null}
+          <ShowCaption
+            artistsCount={artistsCount}
+            artworksCount={artworksCount}
+            kind={kind}
+          />
+          {description ? (
+            <Paragraph style={styles.paragraph}>{description}</Paragraph>
+          ) : null}
         </View>
         {href ? (
           <View>
@@ -83,7 +105,11 @@ function ShowStatus({status}) {
   const backgroundColor = theme.dark ? Colors.grey800 : Colors.grey300;
   const color = theme.dark ? Colors.grey300 : Colors.grey700;
 
-  return <Text style={[{backgroundColor}, {color}, styles.statusLabel]}>{status}</Text>;
+  return (
+    <Text style={[{backgroundColor}, {color}, styles.statusLabel]}>
+      {status}
+    </Text>
+  );
 }
 
 function ShowCaption({artistsCount, artworksCount, kind}) {
@@ -101,7 +127,11 @@ function ShowCaption({artistsCount, artworksCount, kind}) {
 
         return (
           <Fragment key={item}>
-            <Caption style={[!isLastItem && {marginRight: 8}, !isFirstItem && {marginLeft: 8}]}>
+            <Caption
+              style={[
+                !isLastItem && {marginRight: 8},
+                !isFirstItem && {marginLeft: 8},
+              ]}>
               {item}
             </Caption>
             {!isLastItem ? <Caption>-</Caption> : null}

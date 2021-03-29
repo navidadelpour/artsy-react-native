@@ -23,7 +23,9 @@ const styles = StyleSheet.create({
 
 export default function ArtistArtworks({artworks}) {
   if (!artworks || artworks.length === 0) {
-    return <BasicIconMessage message="No artwoks made yet!" icon="error-outline" />;
+    return (
+      <BasicIconMessage message="No artwoks made yet!" icon="error-outline" />
+    );
   }
 
   return (

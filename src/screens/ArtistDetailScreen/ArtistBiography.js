@@ -30,7 +30,9 @@ const styles = StyleSheet.create({
 
 export default function ArtistBiography({biography}) {
   if (!biography) {
-    return <BasicIconMessage message="No biography available" icon="error-outline" />;
+    return (
+      <BasicIconMessage message="No biography available" icon="error-outline" />
+    );
   }
   const {
     author,
