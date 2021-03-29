@@ -41,6 +41,11 @@ export default function ArtworkDetailScreen() {
   }
 
   const {artwork} = data;
+
+  return <ArtworkDetailResult artwork={artwork} />;
+}
+
+function ArtworkDetailResult({artwork}) {
   const {image, formattedMetadata, artist} = artwork;
   const {name, birthday, nationality, image: artistImage} = artist;
   const url = image && image.url;

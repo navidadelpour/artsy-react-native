@@ -24,7 +24,6 @@ const ShowTab = createMaterialTopTabNavigator();
 
 export default function ShowDetailScreen() {
   const {params} = useRoute();
-  const theme = useTheme();
 
   const id = params && params.id;
   const {data, loading, error} = useMockedQuery(SHOW, {
@@ -42,6 +41,11 @@ export default function ShowDetailScreen() {
   }
 
   const {show} = data;
+  return <ShowDetailScreenResult show={show} />;
+}
+
+function ShowDetailScreenResult({show}) {
+  const theme = useTheme();
   const {press_release, cover_image: image, images} = show;
 
   const _ShowPressRelease = useCallback(

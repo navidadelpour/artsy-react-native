@@ -29,6 +29,8 @@ const styles = StyleSheet.create({
 });
 
 export default function ArtistBiography({biography}) {
+  const navigation = useNavigation();
+
   if (!biography) {
     return (
       <BasicIconMessage message="No biography available" icon="error-outline" />
@@ -42,8 +44,6 @@ export default function ArtistBiography({biography}) {
     thumbnail_teaser,
     published_at,
   } = biography;
-
-  const navigation = useNavigation();
 
   const url = thumbnail_image && thumbnail_image.url;
   const authorName = author && author.name;

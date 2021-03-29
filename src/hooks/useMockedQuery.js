@@ -18,6 +18,8 @@ const mocks = {
 };
 
 export default function useMockedQuery(query, options = {}) {
+  const result = useQuery(query, {options, skip: SHOULD_MOCK});
+
   if (SHOULD_MOCK) {
     const queryName = query.definitions[0].name.value;
     const mock = mocks[queryName];
@@ -26,5 +28,6 @@ export default function useMockedQuery(query, options = {}) {
     }
     return {...mock, loading: false, error: false};
   }
-  return useQuery(query, options);
+
+  return result;
 }

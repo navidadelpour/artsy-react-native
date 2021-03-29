@@ -3,6 +3,7 @@ import {useRoute} from '@react-navigation/native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
 import {useTheme} from 'react-native-paper';
+import BasicIconMessage from '../../components/BasicIconMessage';
 import {ARTIST} from '../../graphql/artists';
 import ArtistBiography from './ArtistBiography';
 import ArtistHeader from './ArtistHeader';
@@ -14,16 +15,36 @@ import ArtistShows from './ArtistShows';
 const ArtistTab = createMaterialTopTabNavigator();
 
 export default function ArtistDetailScreen() {
-  const theme = useTheme();
   const {params} = useRoute();
-  const {data, loading} = useMockedQuery(ARTIST, {variables: {id: params?.id}});
+  const {data, error, loading} = useMockedQuery(ARTIST, {
+    variables: {id: params?.id},
+  });
+
+  if (error) {
+    return (
+      <BasicIconMessage error icon="warning" message="Unknown error happend" />
+    );
+  }
 
   if (loading) {
     return <Loader />;
   }
 
-  const {name, nationality, birthday, location, biography, artworks, shows} =
-    data && data.artist;
+  const {artist} = data;
+  return <ArtistDetail artist={artist} />;
+}
+
+function ArtistDetail({artist}) {
+  const theme = useTheme();
+  const {
+    name,
+    nationality,
+    birthday,
+    location,
+    biography,
+    artworks,
+    shows,
+  } = artist;
 
   const _ArtistBiography = useCallback(
     props => {

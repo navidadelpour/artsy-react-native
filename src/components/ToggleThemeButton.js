@@ -9,7 +9,7 @@ function ToggleThemeButton(props) {
 
   const onPress = useCallback(() => {
     isDarkTheme(!isDarkTheme());
-  }, [isDarkTheme]);
+  }, []);
 
   return <IconButton icon={icon} onPress={onPress} {...props} />;
 }
