@@ -11,7 +11,14 @@ function ToggleThemeButton(props) {
     isDarkTheme(!isDarkTheme());
   }, []);
 
-  return <IconButton icon={icon} onPress={onPress} {...props} />;
+  return (
+    <IconButton
+      style={{marginRight: -4}}
+      icon={icon}
+      onPress={onPress}
+      {...props}
+    />
+  );
 }
 
 export default memo(ToggleThemeButton);

@@ -8,7 +8,7 @@ import ArtsyLogoDark from 'assets/logo/artsy-logo-dark.svg';
 function ArtsyLogoComponent(props) {
   const theme = useTheme();
   return (
-    <View style={{marginLeft: 8}} {...props}>
+    <View style={{marginRight: 32, marginLeft: -8}} {...props}>
       {theme.dark ? <ArtsyLogoLight /> : <ArtsyLogoDark />}
     </View>
   );

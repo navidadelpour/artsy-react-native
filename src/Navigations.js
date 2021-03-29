@@ -1,6 +1,6 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {StatusBar, View} from 'react-native';
+import {createNativeStackNavigator} from 'react-native-screens/native-stack';
 
 import ArtistListScreen from 'screens/ArtistListScreen';
 import ArtistDetailScreen from 'screens/ArtistDetailScreen';
@@ -10,18 +10,34 @@ import ShowDetailScreen from 'screens/ShowDetailScreen';
 
 import ArtsyLogoComponent from 'components/ArtsyLogoComponent';
 import ToggleThemeButton from 'components/ToggleThemeButton';
+import {Title, useTheme} from 'react-native-paper';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export default function Navigations() {
+  const theme = useTheme();
   return (
     <>
-      <StatusBar backgroundColor="black" />
-      <Stack.Navigator initialRouteName="Artists">
+      <StatusBar translucent backgroundColor="black" />
+      <Stack.Navigator
+        initialRouteName="Artists"
+        screenOptions={{
+          headerTintColor: theme.colors.text,
+        }}>
         <Stack.Screen
           name="Artists"
           options={{
-            headerLeft: props => <ArtsyLogoComponent {...props} />,
+            headerLeft: props => (
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <ArtsyLogoComponent {...props} />
+                <Title>Artsy</Title>
+              </View>
+            ),
             headerRight: props => <ToggleThemeButton {...props} />,
             title: 'Artsy',
           }}
@@ -32,7 +48,6 @@ export default function Navigations() {
           component={ArtistDetailScreen}
           options={({route}) => ({
             title: route?.params?.artistName,
-            headerStyle: {elevation: 0},
           })}
         />
         <Stack.Screen
