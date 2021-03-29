@@ -58,7 +58,9 @@ function ThemeController({children}) {
   }, []);
 
   useEffect(() => {
-    AsyncStorage.setItem('isDarkTheme', `${darkMode}`);
+    if (darkMode !== undefined) {
+      AsyncStorage.setItem('isDarkTheme', `${darkMode}`);
+    }
   }, [darkMode]);
 
   if (darkMode === undefined) {
