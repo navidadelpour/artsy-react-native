@@ -1,4 +1,5 @@
 import React, {useCallback} from 'react';
+import {Dimensions} from 'react-native';
 import {useRoute} from '@react-navigation/native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
@@ -13,6 +14,7 @@ import ArtistArtworks from './ArtistArtworks';
 import ArtistShows from './ArtistShows';
 
 const ArtistTab = createMaterialTopTabNavigator();
+const initialLayout = {width: Dimensions.get('window').width};
 
 export default function ArtistDetailScreen() {
   const {params} = useRoute();
@@ -77,6 +79,7 @@ function ArtistDetail({artist}) {
       />
       <ArtistTab.Navigator
         initialRouteName="Works"
+        initialLayout={initialLayout}
         tabBarOptions={{
           indicatorStyle: {
             backgroundColor: theme.colors.text,

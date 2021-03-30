@@ -1,5 +1,5 @@
 import React, {useCallback} from 'react';
-import {Image, ScrollView, StyleSheet, View} from 'react-native';
+import {Dimensions, Image, ScrollView, StyleSheet, View} from 'react-native';
 import {Paragraph, Title, useTheme} from 'react-native-paper';
 import {useRoute} from '@react-navigation/native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
 });
 
 const ShowTab = createMaterialTopTabNavigator();
+const initialLayout = {width: Dimensions.get('window').width};
 
 export default function ShowDetailScreen() {
   const {params} = useRoute();
@@ -74,6 +75,7 @@ function ShowDetailScreenResult({show}) {
       <Image style={styles.image} source={{uri: image?.url}} />
       <ShowTab.Navigator
         initialRouteName="About"
+        initialLayout={initialLayout}
         tabBarOptions={{
           indicatorStyle: {
             backgroundColor: theme.colors.text,
