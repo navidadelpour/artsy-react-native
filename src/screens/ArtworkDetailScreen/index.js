@@ -5,6 +5,7 @@ import {useNavigation, useRoute} from '@react-navigation/native';
 
 import {ARTWORK} from 'graphql/artwork';
 import useMockedQuery from 'hooks/useMockedQuery';
+import withMountAfterInteraction from 'utils/withMountAfterInteraction';
 import BasicIconMessage from 'components/BasicIconMessage';
 import Loader from 'components/Loader';
 import Button from 'components/Button';
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function ArtworkDetailScreen() {
+function ArtworkDetailScreen() {
   const {params} = useRoute();
   const navigation = useNavigation();
   const id = params && params.id;
@@ -77,3 +78,5 @@ function ArtworkDetailResult({artwork}) {
     </ScrollView>
   );
 }
+
+export default withMountAfterInteraction(ArtworkDetailScreen);

@@ -2,10 +2,11 @@ import React from 'react';
 import {SafeAreaView, ScrollView} from 'react-native';
 
 import {POPULAR_ARTISTS, TRENDING_ARTISTS} from 'graphql/artists';
+import withMountAfterInteraction from 'utils/withMountAfterInteraction';
 import HomeHeader from './HomeHeader';
 import ArtistsList from './ArtistsList';
 
-export default function ArtistListScreen() {
+function ArtistListScreen() {
   return (
     <SafeAreaView>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -37,3 +38,5 @@ export default function ArtistListScreen() {
     </SafeAreaView>
   );
 }
+
+export default withMountAfterInteraction(ArtistListScreen);

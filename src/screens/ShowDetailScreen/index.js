@@ -5,6 +5,7 @@ import {useRoute} from '@react-navigation/native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
 import {SHOW} from 'graphql/show';
+import withMountAfterInteraction from 'utils/withMountAfterInteraction';
 import useMockedQuery from 'hooks/useMockedQuery';
 import BasicIconMessage from 'components/BasicIconMessage';
 import Loader from 'components/Loader';
@@ -24,7 +25,7 @@ const styles = StyleSheet.create({
 const ShowTab = createMaterialTopTabNavigator();
 const initialLayout = {width: Dimensions.get('window').width};
 
-export default function ShowDetailScreen() {
+function ShowDetailScreen() {
   const {params} = useRoute();
 
   const id = params && params.id;
@@ -106,3 +107,5 @@ function ShowPressRelease({press_release}) {
     </ScrollView>
   );
 }
+
+export default withMountAfterInteraction(ShowDetailScreen);

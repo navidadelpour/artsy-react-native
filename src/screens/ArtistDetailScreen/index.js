@@ -1,13 +1,14 @@
 import React, {useCallback} from 'react';
 import {Dimensions} from 'react-native';
+import {useTheme} from 'react-native-paper';
 import {useRoute} from '@react-navigation/native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
-import {useTheme} from 'react-native-paper';
+import {ARTIST} from 'graphql/artists';
+import useMockedQuery from 'hooks/useMockedQuery';
+import withMountAfterInteraction from 'utils/withMountAfterInteraction';
 import BasicIconMessage from 'components/BasicIconMessage';
 import Loader from 'components/Loader';
-import useMockedQuery from 'hooks/useMockedQuery';
-import {ARTIST} from 'graphql/artists';
 import ArtistBiography from './ArtistBiography';
 import ArtistHeader from './ArtistHeader';
 import ArtistArtworks from './ArtistArtworks';
@@ -16,7 +17,7 @@ import ArtistShows from './ArtistShows';
 const ArtistTab = createMaterialTopTabNavigator();
 const initialLayout = {width: Dimensions.get('window').width};
 
-export default function ArtistDetailScreen() {
+function ArtistDetailScreen() {
   const {params} = useRoute();
   const {data, error, loading} = useMockedQuery(ARTIST, {
     variables: {id: params?.id},
@@ -76,7 +77,7 @@ function ArtistDetail({artist}) {
       <ArtistTab.Navigator
         lazy
         lazyPlaceholder={LazyPlaceholder}
-        initialRouteName="Shows"
+        initialRouteName="Works"
         initialLayout={initialLayout}
         tabBarOptions={{
           indicatorStyle: {
@@ -90,3 +91,5 @@ function ArtistDetail({artist}) {
     </>
   );
 }
+
+export default withMountAfterInteraction(ArtistDetailScreen);

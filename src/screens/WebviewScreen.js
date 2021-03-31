@@ -2,9 +2,10 @@ import React from 'react';
 import {useRoute} from '@react-navigation/native';
 import WebView from 'react-native-webview';
 
+import withMountAfterInteraction from 'utils/withMountAfterInteraction';
 import Loader from 'components/Loader';
 
-export default function WebviewScreen() {
+function WebviewScreen() {
   const {params} = useRoute();
   return (
     <WebView
@@ -18,3 +19,5 @@ export default function WebviewScreen() {
     />
   );
 }
+
+export default withMountAfterInteraction(WebviewScreen);
