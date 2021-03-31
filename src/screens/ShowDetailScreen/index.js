@@ -51,29 +51,27 @@ function ShowDetailScreenResult({show}) {
   const {press_release, cover_image: image, images} = show;
 
   const _ShowPressRelease = useCallback(
-    props => {
-      return <ShowPressRelease press_release={press_release} {...props} />;
-    },
+    props => <ShowPressRelease press_release={press_release} {...props} />,
     [press_release],
   );
 
   const _ShowInformation = useCallback(
-    props => {
-      return <ShowInformation show={show} {...props} />;
-    },
+    props => <ShowInformation show={show} {...props} />,
     [show],
   );
   const _ShowImages = useCallback(
-    props => {
-      return <ShowImages images={images} {...props} />;
-    },
+    props => <ShowImages images={images} {...props} />,
     [images],
   );
+
+  const LazyPlaceholder = useCallback(props => <Loader {...props} />, []);
 
   return (
     <>
       <Image style={styles.image} source={{uri: image?.url}} />
       <ShowTab.Navigator
+        lazy
+        lazyPlaceholder={LazyPlaceholder}
         initialRouteName="About"
         initialLayout={initialLayout}
         tabBarOptions={{

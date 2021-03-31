@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {IconButton} from 'react-native-paper';
 
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function BackgroundIconButton({
+function BackgroundIconButton({
   style,
   backgroundColor = 'rgba(0,0,0,.5)',
   ...rest
@@ -28,3 +28,5 @@ export default function BackgroundIconButton({
     </View>
   );
 }
+
+export default memo(BackgroundIconButton);

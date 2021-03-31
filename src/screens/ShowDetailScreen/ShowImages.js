@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {memo, useCallback, useState} from 'react';
 import {Image, View, Modal, StyleSheet} from 'react-native';
 import {FlatList, TouchableHighlight} from 'react-native-gesture-handler';
 import ImageViewer from 'react-native-image-zoom-viewer';
@@ -27,47 +27,6 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function ShowImages({images}) {
-  const [imageModalIndex, setImageModalIndex] = useState(-1);
-  const modalOpen = imageModalIndex !== -1;
-
-  function closeModal() {
-    setImageModalIndex(-1);
-  }
-
-  if (!images || images.length === 0) {
-    return (
-      <BasicIconMessage message="No images available" icon="error-outline" />
-    );
-  }
-
-  return (
-    <>
-      <FlatList
-        showsVerticalScrollIndicator={false}
-        numColumns={3}
-        contentContainerStyle={styles.list}
-        data={images}
-        keyExtractor={item => item.url}
-        renderItem={props => (
-          <ImageCard setImageModalIndex={setImageModalIndex} {...props} />
-        )}
-      />
-      <Modal visible={modalOpen} transparent>
-        <ImageViewer
-          enableSwipeDown
-          index={imageModalIndex}
-          onCancel={closeModal}
-          imageUrls={images.map(({url}) => ({url}))}
-          renderFooter={() => (
-            <BackgroundIconButton icon="close" onPress={closeModal} />
-          )}
-        />
-      </Modal>
-    </>
-  );
-}
-
 function ImageCard({item, index, setImageModalIndex, ...props}) {
   function onImagePress() {
     setImageModalIndex(index);
@@ -79,5 +38,70 @@ function ImageCard({item, index, setImageModalIndex, ...props}) {
         <Image style={styles.image} source={{uri: item.url}} />
       </TouchableHighlight>
     </View>
+  );
+}
+
+const ImageCardMemoized = memo(ImageCard);
+
+function keyExtractor(item) {
+  return item.url;
+}
+
+function ImagesList({images, renderItem}) {
+  return (
+    <FlatList
+      showsVerticalScrollIndicator={false}
+      numColumns={3}
+      initialNumToRender={9}
+      maxToRenderPerBatch={3}
+      contentContainerStyle={styles.list}
+      data={images}
+      keyExtractor={keyExtractor}
+      renderItem={renderItem}
+    />
+  );
+}
+
+const ImagesListMemoized = memo(ImagesList);
+
+export default function ShowImages({images}) {
+  const [imageModalIndex, setImageModalIndex] = useState(-1);
+  const modalOpen = imageModalIndex !== -1;
+
+  const closeModal = useCallback(() => {
+    setImageModalIndex(-1);
+  }, [setImageModalIndex]);
+
+  const renderItem = useCallback(
+    props => (
+      <ImageCardMemoized setImageModalIndex={setImageModalIndex} {...props} />
+    ),
+    [setImageModalIndex],
+  );
+
+  const renderModalFooter = useCallback(
+    () => <BackgroundIconButton icon="close" onPress={closeModal} />,
+    [closeModal],
+  );
+
+  if (!images || images.length === 0) {
+    return (
+      <BasicIconMessage message="No images available" icon="error-outline" />
+    );
+  }
+
+  return (
+    <>
+      <ImagesListMemoized images={images} renderItem={renderItem} />
+      <Modal visible={modalOpen} transparent>
+        <ImageViewer
+          enableSwipeDown
+          index={imageModalIndex}
+          onCancel={closeModal}
+          imageUrls={images.map(({url}) => ({url}))}
+          renderFooter={renderModalFooter}
+        />
+      </Modal>
+    </>
   );
 }
