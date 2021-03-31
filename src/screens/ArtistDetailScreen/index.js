@@ -49,25 +49,21 @@ function ArtistDetail({artist}) {
   } = artist;
 
   const _ArtistBiography = useCallback(
-    props => {
-      return <ArtistBiography biography={biography} {...props} />;
-    },
+    props => <ArtistBiography biography={biography} {...props} />,
     [biography],
   );
 
   const _ArtistArtworks = useCallback(
-    props => {
-      return <ArtistArtworks artworks={artworks} {...props} />;
-    },
+    props => <ArtistArtworks artworks={artworks} {...props} />,
     [artworks],
   );
 
   const _ArtistShows = useCallback(
-    props => {
-      return <ArtistShows shows={shows} {...props} />;
-    },
+    props => <ArtistShows shows={shows} {...props} />,
     [shows],
   );
+
+  const LazyPlaceholder = useCallback(props => <Loader {...props} />, []);
 
   return (
     <>
@@ -78,7 +74,9 @@ function ArtistDetail({artist}) {
         location={location}
       />
       <ArtistTab.Navigator
-        initialRouteName="Works"
+        lazy
+        lazyPlaceholder={LazyPlaceholder}
+        initialRouteName="Shows"
         initialLayout={initialLayout}
         tabBarOptions={{
           indicatorStyle: {
