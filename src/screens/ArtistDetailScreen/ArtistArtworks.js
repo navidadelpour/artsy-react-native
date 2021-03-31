@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {FlatList, StyleSheet} from 'react-native';
 import {Caption, Card, Subheading, Title} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
@@ -21,24 +21,6 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function ArtistArtworks({artworks}) {
-  if (!artworks || artworks.length === 0) {
-    return (
-      <BasicIconMessage message="No artwoks made yet!" icon="error-outline" />
-    );
-  }
-
-  return (
-    <FlatList
-      showsVerticalScrollIndicator={false}
-      data={artworks}
-      contentContainerStyle={styles.list}
-      renderItem={props => <ArtistArtwork {...props} />}
-      numColumns={2}
-    />
-  );
-}
-
 function ArtistArtwork({item}) {
   const navigation = useNavigation();
   const {id, title, image, category, price} = item;
@@ -57,5 +39,33 @@ function ArtistArtwork({item}) {
         {category ? <Caption>{category}</Caption> : null}
       </Card.Content>
     </Card>
+  );
+}
+
+const ArtistArtworkMemoized = memo(ArtistArtwork);
+
+function keyExtractor(item) {
+  return item.id;
+}
+
+export default function ArtistArtworks({artworks}) {
+  if (!artworks || artworks.length === 0) {
+    return (
+      <BasicIconMessage message="No artwoks made yet!" icon="error-outline" />
+    );
+  }
+
+  return (
+    <FlatList
+      showsVerticalScrollIndicator={false}
+      data={artworks}
+      contentContainerStyle={styles.list}
+      renderItem={props => <ArtistArtworkMemoized {...props} />}
+      numColumns={2}
+      initialNumToRender={4}
+      maxToRenderPerBatch={2}
+      windowSize={6}
+      keyExtractor={keyExtractor}
+    />
   );
 }
