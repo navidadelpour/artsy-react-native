@@ -1,5 +1,5 @@
 import React, {memo, useCallback, useMemo} from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import {Dimensions, FlatList, StyleSheet, View} from 'react-native';
 import {Card, Caption, Subheading, Paragraph} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 
@@ -32,13 +32,12 @@ const styles = StyleSheet.create({
     paddingBottom: 0,
   },
   loader: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexGrow: 1,
-    height: 320,
+    width: Dimensions.get('window').width - 16,
+    height: 280,
   },
   error: {
-    height: 320,
+    width: Dimensions.get('window').width - 16,
+    height: 280,
   },
 });
 
@@ -70,7 +69,8 @@ function ArtistCard({item}) {
 const ArtistCardMemoized = memo(ArtistCard);
 
 export default function ArtistsList({query, variables, dataKey, subheading}) {
-  const {data, loading, error} = useMockedQuery(query, {variables});
+  const {data, loading} = useMockedQuery(query, {variables});
+
   const artists =
     data &&
     data[dataKey] &&
@@ -83,33 +83,36 @@ export default function ArtistsList({query, variables, dataKey, subheading}) {
     [],
   );
 
-  return (
-    <View style={styles.wrapper}>
-      <Paragraph style={styles.subheading}>{subheading}</Paragraph>
-      {error && (
+  const ListEmptyComponent = useCallback(
+    () =>
+      loading ? (
+        <Loader style={styles.loader} />
+      ) : (
         <BasicIconMessage
           error
           style={styles.error}
           icon="warning"
           message="Failed Fetching artists!"
         />
-      )}
-      {loading && (
-        <View style={styles.loader}>
-          <Loader />
-        </View>
-      )}
-      {artists && (
-        <FlatList
-          showsHorizontalScrollIndicator={false}
-          maxToRenderPerBatch={4}
-          horizontal
-          contentContainerStyle={styles.contentContainerStyle}
-          style={styles.list}
-          data={artists}
-          renderItem={renderItem}
-        />
-      )}
+      ),
+    [loading],
+  );
+
+  return (
+    <View style={styles.wrapper}>
+      <Paragraph style={styles.subheading}>{subheading}</Paragraph>
+      <FlatList
+        showsHorizontalScrollIndicator={false}
+        initialNumToRender={2}
+        maxToRenderPerBatch={2}
+        windowSize={5}
+        horizontal
+        contentContainerStyle={styles.contentContainerStyle}
+        style={styles.list}
+        data={artists}
+        renderItem={renderItem}
+        ListEmptyComponent={ListEmptyComponent}
+      />
     </View>
   );
 }

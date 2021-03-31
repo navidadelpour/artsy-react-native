@@ -2,7 +2,6 @@ import React from 'react';
 import {SafeAreaView, ScrollView} from 'react-native';
 
 import {POPULAR_ARTISTS, TRENDING_ARTISTS} from 'graphql/artists';
-import withMountAfterInteraction from 'utils/withMountAfterInteraction';
 import HomeHeader from './HomeHeader';
 import ArtistsList from './ArtistsList';
 
@@ -39,4 +38,4 @@ function ArtistListScreen() {
   );
 }
 
-export default withMountAfterInteraction(ArtistListScreen);
+export default ArtistListScreen;
