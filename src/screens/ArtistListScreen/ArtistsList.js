@@ -32,11 +32,11 @@ const styles = StyleSheet.create({
     paddingBottom: 0,
   },
   loader: {
-    width: Dimensions.get('window').width - 16,
+    width: Dimensions.get('window').width - 32,
     height: 280,
   },
   error: {
-    width: Dimensions.get('window').width - 16,
+    width: Dimensions.get('window').width - 32,
     height: 280,
   },
 });
