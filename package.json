@@ -10,7 +10,7 @@
     "test": "jest",
     "lint": "eslint .",
     "precommit": "lint-staged",
-    "emulator:start": "emulator -avd `emulator -list-avds`"
+    "emulator": "emulator -avd `emulator -list-avds` &"
   },
   "dependencies": {
     "@apollo/client": "^3.3.12",
