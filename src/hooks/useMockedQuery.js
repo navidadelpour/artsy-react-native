@@ -6,7 +6,8 @@ import showMock from '../mocks/showMock';
 import popularArtistsMock from '../mocks/popularArtistsMock';
 import trendingArtistsMock from '../mocks/trendingArtistsMock';
 
-const SHOULD_MOCK = true;
+// eslint-disable-next-line no-undef
+const SHOULD_MOCK = __DEV__;
 
 const mocks = {
   PopularArtists: popularArtistsMock,
