@@ -19,26 +19,25 @@ const mocks = {
   Show: showMock,
 };
 
-export default function useMockedQuery(query, options = {}) {
-  const result = useQuery(query, {options, skip: SHOULD_MOCK});
+function useMockedQuery(query) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => setLoading(false), LOADING_TIME);
   }, []);
 
-  if (SHOULD_MOCK) {
-    const queryName = query.definitions[0].name.value;
-    const mock = mocks[queryName];
-    if (!mock) {
-      throw new Error('Mock not found.');
-    }
-    return {
-      data: loading ? null : mock.data,
-      loading,
-      error: false,
-    };
+  const queryName = query.definitions[0].name.value;
+  const mock = mocks[queryName];
+
+  if (!mock) {
+    throw new Error('Mock not found.');
   }
 
-  return result;
+  return {
+    data: loading ? null : mock.data,
+    loading,
+    error: false,
+  };
 }
+
+export default SHOULD_MOCK ? useMockedQuery : useQuery;
