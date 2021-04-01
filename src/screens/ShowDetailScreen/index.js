@@ -65,14 +65,10 @@ function ShowDetailScreenResult({show}) {
     [images],
   );
 
-  const LazyPlaceholder = useCallback(props => <Loader {...props} />, []);
-
   return (
     <>
       <Image style={styles.image} source={{uri: image?.url}} />
       <ShowTab.Navigator
-        lazy
-        lazyPlaceholder={LazyPlaceholder}
         initialRouteName="About"
         initialLayout={initialLayout}
         tabBarOptions={{

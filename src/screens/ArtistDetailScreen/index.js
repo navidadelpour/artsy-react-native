@@ -64,8 +64,6 @@ function ArtistDetail({artist}) {
     [shows],
   );
 
-  const LazyPlaceholder = useCallback(props => <Loader {...props} />, []);
-
   return (
     <>
       <ArtistHeader
@@ -75,8 +73,6 @@ function ArtistDetail({artist}) {
         location={location}
       />
       <ArtistTab.Navigator
-        lazy
-        lazyPlaceholder={LazyPlaceholder}
         initialRouteName="Works"
         initialLayout={initialLayout}
         tabBarOptions={{
