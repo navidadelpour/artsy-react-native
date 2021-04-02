@@ -67,6 +67,12 @@ export default function Navigations() {
           component={ShowDetailScreen}
           options={({route}) => ({
             title: route?.params?.showName,
+            headerTranslucent: true,
+            headerHideShadow: true,
+            headerTintColor: 'white',
+            headerStyle: {
+              backgroundColor: 'transparent',
+            },
           })}
         />
         <Stack.Screen

@@ -15,7 +15,11 @@ import ShowInformation from './ShowInformation';
 const styles = StyleSheet.create({
   image: {
     width: '100%',
-    height: 150,
+    height: 250,
+  },
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    ...StyleSheet.absoluteFill,
   },
   pressReleaseWrapper: {
     padding: 16,
@@ -67,7 +71,10 @@ function ShowDetailScreenResult({show}) {
 
   return (
     <>
-      <Image style={styles.image} source={{uri: image?.url}} />
+      <View>
+        <Image style={styles.image} source={{uri: image?.url}} />
+        <View style={styles.overlay} />
+      </View>
       <ShowTab.Navigator
         initialRouteName="About"
         backBehavior="none"
