@@ -1,9 +1,10 @@
 import React, {memo} from 'react';
 import {FlatList, StyleSheet} from 'react-native';
-import {Caption, Card, Subheading, Title} from 'react-native-paper';
+import {Caption, Card, Subheading} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 
 import {routes} from 'utils/routes';
+import getItemLayoutWithSpacing from 'utils/getItemLayoutWithSpacing';
 import BasicIconMessage from 'components/BasicIconMessage';
 
 const styles = StyleSheet.create({
@@ -11,6 +12,7 @@ const styles = StyleSheet.create({
     marginRight: 16,
     marginBottom: 16,
     flex: 1,
+    height: 250,
   },
   list: {
     paddingTop: 16,
@@ -19,6 +21,15 @@ const styles = StyleSheet.create({
   cardContent: {
     paddingHorizontal: 8,
     paddingBottom: 8,
+  },
+  priceLabel: {
+    position: 'absolute',
+    right: 8,
+    top: 8,
+    paddingHorizontal: 8,
+  },
+  priceText: {
+    fontWeight: 'bold',
   },
 });
 
@@ -35,10 +46,16 @@ function ArtistArtwork({item}) {
     <Card onPress={onPress} style={styles.card}>
       <Card.Cover source={{uri: url}} />
       <Card.Content style={styles.cardContent}>
-        {price ? <Title>{price}</Title> : null}
-        {title ? <Subheading>{title}</Subheading> : null}
-        {category ? <Caption>{category}</Caption> : null}
+        {title ? <Subheading numberOfLines={1}>{title}</Subheading> : null}
+        {category ? <Caption numberOfLines={1}>{category}</Caption> : null}
       </Card.Content>
+      {price ? (
+        <Card style={[styles.priceLabel]}>
+          <Subheading style={styles.priceText} numberOfLines={1}>
+            {price}
+          </Subheading>
+        </Card>
+      ) : null}
     </Card>
   );
 }
@@ -48,6 +65,12 @@ const ArtistArtworkMemoized = memo(ArtistArtwork);
 function keyExtractor(item) {
   return item.id;
 }
+
+const getItemLayout = getItemLayoutWithSpacing.bind(
+  this,
+  styles.card.height,
+  styles.card.marginBottom,
+);
 
 export default function ArtistArtworks({artworks}) {
   if (!artworks || artworks.length === 0) {
@@ -63,10 +86,11 @@ export default function ArtistArtworks({artworks}) {
       contentContainerStyle={styles.list}
       renderItem={props => <ArtistArtworkMemoized {...props} />}
       numColumns={2}
-      initialNumToRender={4}
-      maxToRenderPerBatch={2}
-      windowSize={6}
+      initialNumToRender={2}
+      maxToRenderPerBatch={1}
+      windowSize={5}
       keyExtractor={keyExtractor}
+      getItemLayout={getItemLayout}
     />
   );
 }

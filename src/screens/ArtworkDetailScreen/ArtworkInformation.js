@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    marginTop: 16,
   },
   priceValue: {
     fontWeight: 'bold',
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   divider: {
-    marginVertical: 16,
+    marginTop: 16,
   },
 });
 

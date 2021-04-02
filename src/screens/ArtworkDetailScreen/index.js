@@ -15,7 +15,10 @@ import ArtworkInformation from './ArtworkInformation';
 const styles = StyleSheet.create({
   imageCaption: {
     textAlign: 'center',
-    paddingHorizontal: 4,
+    paddingHorizontal: 16,
+  },
+  artistCardTitle: {
+    marginRight: 16,
   },
   button: {
     display: 'flex',
@@ -67,6 +70,7 @@ function ArtworkDetailResult({artwork}) {
       <ArtworkImage url={url} />
       <Caption style={styles.imageCaption}>{formattedMetadata}</Caption>
       <Card.Title
+        style={styles.artistCardTitle}
         title={name}
         subtitle={`${nationality}, b ${birthday}`}
         left={cardTitleLeft}

@@ -4,6 +4,7 @@ import {Caption, Card, Subheading} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 
 import {routes} from 'utils/routes';
+import getItemLayoutWithSpacing from 'utils/getItemLayoutWithSpacing';
 import BasicIconMessage from 'components/BasicIconMessage';
 
 const styles = StyleSheet.create({
@@ -19,6 +20,10 @@ const styles = StyleSheet.create({
   captionWrapper: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  captionInformation: {
+    flexShrink: 1,
+    marginRight: 16,
   },
   cardContent: {
     paddingHorizontal: 8,
@@ -41,7 +46,7 @@ function ArtistShow({item}) {
       <Card.Content style={styles.cardContent}>
         {name ? <Subheading numberOfLines={1}>{name}</Subheading> : null}
         <View style={styles.captionWrapper}>
-          <Caption>
+          <Caption style={styles.captionInformation} numberOfLines={1}>
             {city}
             {city && exhibition_period && ', '}
             {exhibition_period}
@@ -55,17 +60,11 @@ function ArtistShow({item}) {
 
 const ArtistShowMemoized = memo(ArtistShow);
 
-function getItemLayout(data, index) {
-  const {height, marginBottom} = styles.card;
-  const length = height + marginBottom;
-  const offsetFromTop = styles.list.paddingTop;
-
-  return {
-    length,
-    offset: length * index + offsetFromTop,
-    index,
-  };
-}
+const getItemLayout = getItemLayoutWithSpacing.bind(
+  this,
+  styles.card.height,
+  styles.card.marginBottom,
+);
 
 function keyExtractor(item) {
   return item.id;

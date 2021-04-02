@@ -52,8 +52,9 @@ function ImagesList({images, renderItem}) {
     <FlatList
       showsVerticalScrollIndicator={false}
       numColumns={3}
-      initialNumToRender={9}
-      maxToRenderPerBatch={3}
+      initialNumToRender={3}
+      maxToRenderPerBatch={1}
+      windowSize={7}
       contentContainerStyle={styles.list}
       data={images}
       keyExtractor={keyExtractor}

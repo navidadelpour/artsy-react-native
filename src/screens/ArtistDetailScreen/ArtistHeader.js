@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   wrapper: {
     display: 'flex',
     alignItems: 'center',
-    paddingBottom: 8,
+    paddingBottom: 16,
     paddingTop: 40,
     marginBottom: -1,
     zIndex: 2,

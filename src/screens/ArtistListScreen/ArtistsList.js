@@ -1,9 +1,10 @@
-import React, {memo, useCallback, useMemo} from 'react';
+import React, {memo, useCallback} from 'react';
 import {Dimensions, FlatList, StyleSheet, View} from 'react-native';
-import {Card, Caption, Subheading, Paragraph} from 'react-native-paper';
+import {Card, Caption, Subheading} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 
 import {routes} from 'utils/routes';
+import getItemLayoutWithSpacing from 'utils/getItemLayoutWithSpacing';
 import useMockedQuery from 'hooks/useMockedQuery';
 import BasicIconMessage from 'components/BasicIconMessage';
 import Loader from 'components/Loader';
@@ -11,10 +12,9 @@ import Loader from 'components/Loader';
 const styles = StyleSheet.create({
   wrapper: {
     marginTop: 16,
-    marginBottom: 16,
   },
   contentContainerStyle: {
-    paddingTop: 8,
+    paddingTop: 4,
     paddingLeft: 16,
   },
   listTitle: {fontWeight: '500'},
@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
   card: {
     width: 200,
     padding: 8,
+    paddingBottom: 4,
     marginRight: 16,
     marginBottom: 16,
   },
@@ -50,14 +51,14 @@ function ArtistCard({item}) {
     navigation.navigate(routes.artistScreen, {id, artistName: name});
   }
 
-  const imageSource = useMemo(() => ({uri: image.url}), [image]);
-
   return (
     <Card style={styles.card} onPress={onPress}>
-      <Card.Cover source={imageSource} />
+      <Card.Cover source={{uri: image.url}} />
       <Card.Content style={styles.cardContent}>
-        <Subheading style={styles.listTitle}>{name}</Subheading>
-        <Caption>
+        <Subheading style={styles.listTitle} numberOfLines={1}>
+          {name}
+        </Subheading>
+        <Caption numberOfLines={1}>
           {nationality}
           {nationality && birthday && ', '}
           {birthday && `b ${birthday}`}
@@ -68,6 +69,16 @@ function ArtistCard({item}) {
 }
 
 const ArtistCardMemoized = memo(ArtistCard);
+
+function keyExtractor(item) {
+  return item.id;
+}
+
+const getItemLayout = getItemLayoutWithSpacing.bind(
+  this,
+  styles.card.width,
+  styles.card.marginRight,
+);
 
 export default function ArtistsList({query, variables, dataKey, subheading}) {
   const {data, loading} = useMockedQuery(query, {variables});
@@ -101,7 +112,7 @@ export default function ArtistsList({query, variables, dataKey, subheading}) {
 
   return (
     <View style={styles.wrapper}>
-      <Paragraph style={styles.subheading}>{subheading}</Paragraph>
+      <Caption style={styles.subheading}>{subheading}</Caption>
       <FlatList
         showsHorizontalScrollIndicator={false}
         initialNumToRender={2}
@@ -112,6 +123,8 @@ export default function ArtistsList({query, variables, dataKey, subheading}) {
         style={styles.list}
         data={artists}
         renderItem={renderItem}
+        getItemLayout={getItemLayout}
+        keyExtractor={keyExtractor}
         ListEmptyComponent={ListEmptyComponent}
       />
     </View>
