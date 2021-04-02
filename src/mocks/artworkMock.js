@@ -34,11 +34,17 @@ export default {
       published: true,
       conditionDescription: {
         label: 'Conditions',
-        details: 'sldjf;slf',
+        details: 'Included',
       },
-      certificateOfAuthenticity: null,
+      certificateOfAuthenticity: {
+        label: 'Certificate Of Authenticity',
+        details: 'Included',
+      },
       fair: null,
-      framed: null,
+      framed: {
+        label: 'Framed',
+        details: 'Not Included',
+      },
       partner: {
         name: 'Seattle Art Museum',
       },
