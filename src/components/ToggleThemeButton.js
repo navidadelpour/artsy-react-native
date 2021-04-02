@@ -14,6 +14,7 @@ function ToggleThemeButton(props) {
   return (
     <IconButton
       style={{marginRight: -4}}
+      animated
       icon={icon}
       onPress={onPress}
       {...props}
