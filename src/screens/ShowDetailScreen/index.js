@@ -6,6 +6,7 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 
 import {SHOW} from 'graphql/show';
 import withMountAfterInteraction from 'utils/withMountAfterInteraction';
+import {initialRoutes, routes} from 'utils/routes';
 import useMockedQuery from 'hooks/useMockedQuery';
 import BasicIconMessage from 'components/BasicIconMessage';
 import Loader from 'components/Loader';
@@ -76,7 +77,7 @@ function ShowDetailScreenResult({show}) {
         <View style={styles.overlay} />
       </View>
       <ShowTab.Navigator
-        initialRouteName="About"
+        initialRouteName={initialRoutes.showScreenTab}
         backBehavior="none"
         initialLayout={initialLayout}
         tabBarOptions={{
@@ -84,9 +85,15 @@ function ShowDetailScreenResult({show}) {
             backgroundColor: theme.colors.text,
           },
         }}>
-        <ShowTab.Screen name="Press Release" component={_ShowPressRelease} />
-        <ShowTab.Screen name="About" component={_ShowInformation} />
-        <ShowTab.Screen name="Pictures" component={_ShowImages} />
+        <ShowTab.Screen
+          name={routes.showPressReleaseTab}
+          component={_ShowPressRelease}
+        />
+        <ShowTab.Screen
+          name={routes.showInformationTab}
+          component={_ShowInformation}
+        />
+        <ShowTab.Screen name={routes.showImagesTab} component={_ShowImages} />
       </ShowTab.Navigator>
     </>
   );

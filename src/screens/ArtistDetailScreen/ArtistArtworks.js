@@ -3,6 +3,7 @@ import {FlatList, StyleSheet} from 'react-native';
 import {Caption, Card, Subheading, Title} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 
+import {routes} from 'utils/routes';
 import BasicIconMessage from 'components/BasicIconMessage';
 
 const styles = StyleSheet.create({
@@ -27,7 +28,7 @@ function ArtistArtwork({item}) {
   const url = image && image.url;
 
   function onPress() {
-    navigation.navigate('Artwork', {id, artworkName: title});
+    navigation.navigate(routes.artworkScreen, {id, artworkName: title});
   }
 
   return (

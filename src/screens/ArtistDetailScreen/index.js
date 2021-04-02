@@ -5,8 +5,9 @@ import {useRoute} from '@react-navigation/native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
 import {ARTIST} from 'graphql/artists';
-import useMockedQuery from 'hooks/useMockedQuery';
 import withMountAfterInteraction from 'utils/withMountAfterInteraction';
+import {initialRoutes, routes} from 'utils/routes';
+import useMockedQuery from 'hooks/useMockedQuery';
 import BasicIconMessage from 'components/BasicIconMessage';
 import Loader from 'components/Loader';
 import ArtistBiography from './ArtistBiography';
@@ -73,7 +74,7 @@ function ArtistDetail({artist}) {
         location={location}
       />
       <ArtistTab.Navigator
-        initialRouteName="Works"
+        initialRouteName={initialRoutes.artistScreenTab}
         backBehavior="none"
         initialLayout={initialLayout}
         tabBarOptions={{
@@ -81,9 +82,18 @@ function ArtistDetail({artist}) {
             backgroundColor: theme.colors.text,
           },
         }}>
-        <ArtistTab.Screen name="Biography" component={_ArtistBiography} />
-        <ArtistTab.Screen name="Works" component={_ArtistArtworks} />
-        <ArtistTab.Screen name="Shows" component={_ArtistShows} />
+        <ArtistTab.Screen
+          name={routes.artistBiographyTab}
+          component={_ArtistBiography}
+        />
+        <ArtistTab.Screen
+          name={routes.artistArtworksTab}
+          component={_ArtistArtworks}
+        />
+        <ArtistTab.Screen
+          name={routes.artistShowsTab}
+          component={_ArtistShows}
+        />
       </ArtistTab.Navigator>
     </>
   );

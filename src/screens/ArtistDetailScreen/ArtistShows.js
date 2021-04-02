@@ -3,6 +3,7 @@ import {FlatList, StyleSheet, View} from 'react-native';
 import {Caption, Card, Subheading} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 
+import {routes} from 'utils/routes';
 import BasicIconMessage from 'components/BasicIconMessage';
 
 const styles = StyleSheet.create({
@@ -31,7 +32,7 @@ function ArtistShow({item}) {
   const url = image && image.url;
 
   function onPress() {
-    navigation.navigate('Show', {id, showName: name});
+    navigation.navigate(routes.showScreen, {id, showName: name});
   }
 
   return (

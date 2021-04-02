@@ -10,6 +10,7 @@ import {
 } from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 
+import {routes} from 'utils/routes';
 import Button from 'components/Button';
 
 const styles = StyleSheet.create({
@@ -60,7 +61,7 @@ export default function ShowInformation({show}) {
   const link = `https://www.artsy.net${href}`;
 
   function onPress() {
-    navigation.navigate('Webview', {link});
+    navigation.navigate(routes.webviewScreen, {link});
   }
 
   return (

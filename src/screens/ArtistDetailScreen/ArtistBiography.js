@@ -4,6 +4,7 @@ import {Caption, Card, Paragraph, Subheading, Title} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 import Moment from 'react-moment';
 
+import {routes} from 'utils/routes';
 import Button from 'components/Button';
 import BasicIconMessage from 'components/BasicIconMessage';
 
@@ -50,7 +51,7 @@ export default function ArtistBiography({biography}) {
   const link = `https://www.artsy.net${href}`;
 
   function onPress() {
-    navigation.navigate('Webview', {link});
+    navigation.navigate(routes.webviewScreen, {link});
   }
 
   return (

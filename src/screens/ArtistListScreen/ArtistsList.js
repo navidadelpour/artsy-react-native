@@ -3,6 +3,7 @@ import {Dimensions, FlatList, StyleSheet, View} from 'react-native';
 import {Card, Caption, Subheading, Paragraph} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 
+import {routes} from 'utils/routes';
 import useMockedQuery from 'hooks/useMockedQuery';
 import BasicIconMessage from 'components/BasicIconMessage';
 import Loader from 'components/Loader';
@@ -46,7 +47,7 @@ function ArtistCard({item}) {
   const {id, image, name, nationality, birthday} = item;
 
   function onPress() {
-    navigation.navigate('Artist', {id, artistName: name});
+    navigation.navigate(routes.artistScreen, {id, artistName: name});
   }
 
   const imageSource = useMemo(() => ({uri: image.url}), [image]);
