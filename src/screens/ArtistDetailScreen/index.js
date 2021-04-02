@@ -74,6 +74,7 @@ function ArtistDetail({artist}) {
       />
       <ArtistTab.Navigator
         initialRouteName="Works"
+        backBehavior="none"
         initialLayout={initialLayout}
         tabBarOptions={{
           indicatorStyle: {

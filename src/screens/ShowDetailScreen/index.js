@@ -70,6 +70,7 @@ function ShowDetailScreenResult({show}) {
       <Image style={styles.image} source={{uri: image?.url}} />
       <ShowTab.Navigator
         initialRouteName="About"
+        backBehavior="none"
         initialLayout={initialLayout}
         tabBarOptions={{
           indicatorStyle: {
