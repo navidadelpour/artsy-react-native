@@ -1,18 +1,16 @@
 import React, {memo} from 'react';
 import {StyleSheet} from 'react-native';
-import {Caption, Paragraph, Subheading, Surface} from 'react-native-paper';
+import {Caption, Paragraph, Surface, Title} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const styles = StyleSheet.create({
   wrapper: {
     display: 'flex',
     alignItems: 'center',
-    paddingVertical: 8,
+    paddingBottom: 8,
+    paddingTop: 40,
     marginBottom: -1,
     zIndex: 2,
-  },
-  subheading: {
-    fontWeight: 'bold',
   },
   noVerticalMargin: {
     marginVertical: 0,
@@ -21,10 +19,8 @@ const styles = StyleSheet.create({
 
 function ArtistHeader({name, nationality, birthday, location}) {
   return (
-    <Surface style={[styles.wrapper]}>
-      <Subheading style={[styles.subheading, styles.noVerticalMargin]}>
-        {name}
-      </Subheading>
+    <Surface style={styles.wrapper}>
+      <Title style={styles.noVerticalMargin}>{name}</Title>
       <Paragraph style={styles.noVerticalMargin}>
         {nationality}
         {nationality && birthday && ', '}

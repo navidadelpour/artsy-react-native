@@ -46,8 +46,13 @@ export default function Navigations() {
         <Stack.Screen
           name="Artist"
           component={ArtistDetailScreen}
-          options={({route}) => ({
-            title: route?.params?.artistName,
+          options={() => ({
+            headerTranslucent: true,
+            headerHideShadow: true,
+            title: null,
+            headerStyle: {
+              backgroundColor: 'transparent',
+            },
           })}
         />
         <Stack.Screen
