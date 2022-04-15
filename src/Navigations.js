@@ -35,11 +35,9 @@ function ToggleThemeButton(props) {
 }
 
 export default function Navigations() {
-  const theme = useTheme();
-  const barStyle = theme.dark ? 'light-content' : 'dark-content';
   return (
     <>
-      <StatusBar translucent backgroundColor="transparent" barStyle={barStyle} />
+      <StatusBar translucent backgroundColor="black" />
       <Stack.Navigator
         initialRouteName="Artists"
         screenOptions={{
