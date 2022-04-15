@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
 
 function ArtworkDetailScreen() {
   const {params} = useRoute();
-  const navigation = useNavigation();
   const id = params && params.id;
   const {data, loading, error} = useMockedQuery(ARTWORK, {
     variables: {id},
@@ -51,6 +50,8 @@ function ArtworkDetailScreen() {
 }
 
 function ArtworkDetailResult({artwork}) {
+  const navigation = useNavigation();
+
   const {image, formattedMetadata, artist} = artwork;
   const {name, birthday, nationality, image: artistImage} = artist;
   const url = image && image.url;
