@@ -12,6 +12,9 @@ target 'ArtsyApp' do
     :hermes_enabled => false
   )
 
+  pod 'ViroReact', :path => '../node_modules/@viro-community/react-viro/ios/'
+  pod 'ViroKit', :path => '../node_modules/@viro-community/react-viro/ios/dist/ViroRenderer/'
+
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
