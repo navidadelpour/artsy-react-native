@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {View} from 'react-native';
+import {StatusBar, View} from 'react-native';
 import {IconButton, useTheme} from 'react-native-paper';
 import ArtistListScreen from './screens/ArtistListScreen';
 import ArtistDetailScreen from './screens/ArtistDetailScreen';
@@ -35,8 +35,11 @@ function ToggleThemeButton(props) {
 }
 
 export default function Navigations() {
+  const theme = useTheme();
+  const barStyle = theme.dark ? 'light-content' : 'dark-content';
   return (
     <>
+      <StatusBar translucent backgroundColor="transparent" barStyle={barStyle} />
       <Stack.Navigator
         initialRouteName="Artists"
         screenOptions={{
