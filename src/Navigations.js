@@ -7,6 +7,7 @@ import {initialRoutes, routes} from 'utils/routes';
 import ArtistListScreen from 'screens/ArtistListScreen';
 import ArtistDetailScreen from 'screens/ArtistDetailScreen';
 import WebviewScreen from 'screens/WebviewScreen';
+import ArtworkARScreen from 'screens/ArtworkARScreen';
 import ArtworkDetailScreen from 'screens/ArtworkDetailScreen';
 import ShowDetailScreen from 'screens/ShowDetailScreen';
 
@@ -80,6 +81,14 @@ export default function Navigations() {
           name={routes.webviewScreen}
           component={WebviewScreen}
           options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={routes.artworkARScreen}
+          component={ArtworkARScreen}
+          options={({route}) => ({
+            headerTranslucent: true,
+            title: route?.params?.artworkName,
+          })}
         />
       </Stack.Navigator>
     </>

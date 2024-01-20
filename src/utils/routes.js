@@ -4,6 +4,7 @@ export const routes = {
   artworkScreen: 'Artwork',
   showScreen: 'Show',
   webviewScreen: 'Webview',
+  artworkARScreen: 'artworkAR',
 
   artistBiographyTab: 'Biography',
   artistArtworksTab: 'Works',

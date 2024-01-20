@@ -9,6 +9,7 @@ import withMountAfterInteraction from 'utils/withMountAfterInteraction';
 import BasicIconMessage from 'components/BasicIconMessage';
 import Loader from 'components/Loader';
 import Button from 'components/Button';
+import {routes} from 'utils/routes';
 import ArtworkImage from './ArtworkImage';
 import ArtworkInformation from './ArtworkInformation';
 
@@ -52,13 +53,13 @@ function ArtworkDetailScreen() {
 function ArtworkDetailResult({artwork}) {
   const navigation = useNavigation();
 
-  const {image, formattedMetadata, artist} = artwork;
+  const {image, title, formattedMetadata, artist} = artwork;
   const {name, birthday, nationality, image: artistImage} = artist;
   const url = image && image.url;
   const artistUrl = artistImage && artistImage.url;
 
   function onARButtonPress() {
-    navigation.navigate('ArtworkAR', {artwork});
+    navigation.navigate(routes.artworkARScreen, {artwork, artworkName: title});
   }
 
   const cardTitleLeft = useCallback(
@@ -70,6 +71,9 @@ function ArtworkDetailResult({artwork}) {
     <ScrollView showsVerticalScrollIndicator={false}>
       <ArtworkImage url={url} />
       <Caption style={styles.imageCaption}>{formattedMetadata}</Caption>
+      <Button mode="contained" style={styles.button} onPress={onARButtonPress}>
+        View in Augmented Reality
+      </Button>
       <Card.Title
         style={styles.artistCardTitle}
         title={name}
@@ -77,9 +81,6 @@ function ArtworkDetailResult({artwork}) {
         left={cardTitleLeft}
       />
       <ArtworkInformation artwork={artwork} />
-      <Button mode="contained" style={styles.button} onPress={onARButtonPress}>
-        View in Augmented Reality
-      </Button>
     </ScrollView>
   );
 }
